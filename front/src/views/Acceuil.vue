@@ -20,11 +20,11 @@
             </div>
             <div class="col-8">
                 <div class="logosAndImages">
-                    <img class="clubLogo" src="../assets/omcGreyLogo.png"/>
+                    <img class="clubLogo" src="../assets/omc_logo_grey.png"/>
                     <div class = "IPNameLogo sec1">
-                        <img class="eventName"  src="../assets/eventname.png"/>
-                        <img class="asset1"  src="../assets/welcomeAsset1.png"/>
-                        <img class="IPlogo"  src="../assets/logoIP.png"/>
+                        <img class="eventName"  src="../assets/install_party_new_era.png"/>
+                        <img class="asset1"  src="../assets/welcome_special_asset1.png"/>
+                        <img class="IPlogo"  src="../assets/logoIP10.png"/>
                     </div>
                     <div class = "IPNameLogo sec2">
                         <div v-for="pic in pics" :key="pic.title">
