@@ -2,8 +2,7 @@
   <div class="hero-acceuil">
     <div>
       <!-- text presentation -->
-      <p></p>
-      <Button text="Participer" color="#4A525C">Participer</Button>
+      
     </div>
     <!-- cote gauche -->
     <div>
