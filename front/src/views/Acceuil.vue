@@ -1,35 +1,28 @@
 <template>
-    <div class="container-fluid hero-acceuil">
-        <div class="row space2">
-            <div class="col-12"></div>
-        </div>
+    <div class="hero-acceuil">
+        <div class="space"></div>
 
-        <div class="row">
+        <div class="page">
             <!-- cote gauche -->
-            <div class="col-4 text-center">
-                <div class="row space1">
-                    <div class="col-12"></div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
+            <div class="left-side">
+                <div class="space-content"></div>
+                <div class="content">
+                    <h2>INSTALL PARTY IS HERE</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="logosAndImages">
-                    <img class="clubLogo" src="../assets/omc_logo_grey.png"/>
-                    <div class = "IPNameLogo sec1">
-                        <img class="eventName"  src="../assets/install_party_new_era.png"/>
-                        <img class="asset1"  src="../assets/welcome_special_asset1.png"/>
-                        <img class="IPlogo"  src="../assets/logoIP10.png"/>
-                    </div>
-                    <div class = "IPNameLogo sec2">
-                        <div v-for="pic in pics" :key="pic.title">
-                            <img class="socialMedia" :src="getImgUrl(pic.title)" v-bind:alt="pic.title">
-                        </div>
+            <div class="right-side">
+                <img class="clubLogo" src="../assets/omc_logo_grey.png"/>
+                <div class = "IPNameLogo sec1">
+                    <img class="eventName"  src="../assets/install_party_new_era.png"/>
+                    <img class="asset1"  src="../assets/welcome_special_asset1.png"/>
+                    <img class="IPlogo"  src="../assets/logoIP10.png"/>
+                </div>
+                <div class = "IPNameLogo sec2">
+                    <div v-for="pic in pics" :key="pic.title">
+                        <img class="socialMedia" :src="getImgUrl(pic.title)" v-bind:alt="pic.title">
                     </div>
                 </div>
             </div>
@@ -77,26 +70,43 @@ export default {
   position: relative;
 }
 
-.space1{
-    height: 35%;
-}
-
-.space2{
+.space{
     height: 8%;
 }
 
-p{
-    margin-left: 30%;
+.page{
+    display: flex;
 }
 
-.logosAndImages {
-    margin-left: 10%;
+.left-side{
+    flex: 5;
+}
+
+.space-content{
+    height: 35%;
+}
+
+.content{
+    margin-left: 20%;
+}
+
+.content h2{
+    font-size: 50px;
+}
+
+.content p{
+    font-size: 25px;
+}
+
+.right-side {
+    margin-left: 5%;
     margin-right: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 70vh;
+    flex: 7;
 }
 
 .clubLogo{
@@ -115,7 +125,7 @@ p{
     height: 40%;
     margin-top: 5%;
     margin-right: 10%;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 
 .sec2{
