@@ -93,7 +93,7 @@ nav ul li a:hover{
 .menu-icon {
     line-height: 45px;
     width: 100%;
-    background: #000;
+    background: none;
     text-align: right;
     box-sizing: border-box;
     padding: 10px 30px;

@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-acceuil">
+    <div class="hero-acceuil back-image">
         <div class="space"></div>
 
         <div class="page">
@@ -9,7 +9,7 @@
                 <div class="content">
                     <h2>INSTALL PARTY IS HERE</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Notre evenement phare est enfin là, au programme des conferences, panels, workshops et plein d'activités, vous pouvez en apprendre plus juste en bas!
                     </p>
                 </div>
             </div>
@@ -56,10 +56,12 @@ export default {
 
 
 <style scoped >
-.hero-acceuil {
+.back-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: url("../assets/Index_background_3.jpg");
+}
 
+.hero-acceuil {
   /* Set a specific height */
   height: 100vh;
   width: 100%;
@@ -88,10 +90,25 @@ export default {
 
 .content{
     margin-left: 20%;
+    height: 50vh;
+    text-align: center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.content::-webkit-scrollbar {
+  display: none;
 }
 
 .content h2{
     font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .content p{
@@ -153,6 +170,130 @@ export default {
 
 .socialMedia{
     width:40%;
+}
+
+@media(max-width: 1300px) {
+    .content h2{
+        font-size: 30px;
+    }
+
+    .content p{
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 850px) {
+    .content h2{
+        font-size: 25px;
+    }
+
+    .content p{
+        font-size: 14px;
+    }
+}
+
+@media (max-aspect-ratio: 3/2)  {
+
+    .back-image {
+      /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+      background-image: url("../assets/white_shape.jpg");
+    }
+
+    .hero-acceuil {
+      /* Set a specific height */
+      width: 100%;
+      /* Position and center the image to scale nicely on all screens */
+      background-position: center;
+      background-repeat:unset;
+      background-size: cover;
+      position: relative;
+    }
+
+    .space{
+        height: 0%;
+    }
+
+    .page{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .content{
+        margin-left: 5%;
+        height: auto;
+        overflow: auto;
+        text-overflow: inherit;
+        word-wrap: normal;
+        overflow-y: auto;
+    }
+
+    .content h2{
+        font-size: 30px;
+    }
+
+    .content p{
+        font-size: 18px;
+    }
+
+}
+
+@media(max-width: 500px) {
+
+    .right-side {
+        margin-left: 0%;
+        margin-right: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        flex: 7;
+    }
+
+    .clubLogo{
+        display:none;
+    }
+
+
+    .IPNameLogo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sec1{
+        width:auto;
+        height: auto;
+        margin-top: 10%;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .sec2{
+        display: none;
+    }
+
+    .eventName{
+        width:100%;
+        height:auto;
+        margin-bottom: 10%;
+    }
+
+    .IPlogo{
+        width:50%;
+        height:auto;
+        margin-bottom: 20%;
+    }
+
+    .asset1{
+        display: none;
+    }
+
+    .socialMedia{
+        width:40%;
+    }
+
 }
 
 </style>
