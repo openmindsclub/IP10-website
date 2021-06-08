@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-acceuil back-image">
+    <div class="hero-acceuil">
         <div class="space"></div>
 
         <div class="page">
@@ -11,6 +11,7 @@
                     <p>
                         Notre evenement phare est enfin là, au programme des conferences, panels, workshops et plein d'activités, vous pouvez en apprendre plus juste en bas!
                     </p>
+                    <img @click="Registration()" src="../assets/participer_button.png" class="participer-button"/>
                 </div>
             </div>
             <div class="right-side">
@@ -49,6 +50,9 @@ export default {
   methods: {
       getImgUrl(pic){
           return  require('../assets/Social_Media_Logos/' + pic + ".png");
+      },
+      Registration(){
+          console.log("clicked")
       }
   }
 };
@@ -56,12 +60,8 @@ export default {
 
 
 <style scoped >
-.back-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: url("../assets/Index_background_3.jpg");
-}
-
 .hero-acceuil {
+    background-image: url("../assets/Index_background_3.jpg");
   /* Set a specific height */
   height: 100vh;
   width: 100%;
@@ -106,13 +106,18 @@ export default {
 }
 
 .content h2{
-    font-size: 50px;
+    font-size: 3em;
     font-weight: bold;
     font-style: italic;
 }
 
 .content p{
-    font-size: 25px;
+    font-size: 2em;
+}
+
+.content .participer-button{
+    margin-top: 5%;
+    width: 40%;
 }
 
 .right-side {
@@ -174,11 +179,11 @@ export default {
 
 @media(max-width: 1300px) {
     .content h2{
-        font-size: 30px;
+        font-size: 2em;
     }
 
     .content p{
-        font-size: 18px;
+        font-size: 1.5em;
     }
 }
 
@@ -192,21 +197,9 @@ export default {
     }
 }
 
-@media (max-aspect-ratio: 3/2)  {
-
-    .back-image {
-      /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-      background-image: url("../assets/white_shape.jpg");
-    }
-
+@media (max-width: 1200px) and (max-aspect-ratio: 10/9)  {
     .hero-acceuil {
-      /* Set a specific height */
-      width: 100%;
-      /* Position and center the image to scale nicely on all screens */
-      background-position: center;
-      background-repeat:unset;
-      background-size: cover;
-      position: relative;
+        background-image: url("../assets/white_shape.jpg");
     }
 
     .space{
@@ -216,6 +209,8 @@ export default {
     .page{
         display: flex;
         flex-direction: column-reverse;
+        background-image: url("../assets/white_shape.jpg");
+        background-size:100vh;
     }
 
     .content{
@@ -233,6 +228,85 @@ export default {
 
     .content p{
         font-size: 18px;
+    }
+
+    .right-side {
+        margin-top: 10%;
+        margin-left: 0%;
+        margin-right: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        flex: auto;
+    }
+
+    .left-side{
+        margin-top: 20%;
+        flex: auto;
+    }
+
+    .asset1{
+        width:5%;
+        height:10vh;
+    }
+
+}
+
+@media (max-width: 600px){
+    .hero-acceuil {
+        background-image: url("../assets/white_shape.jpg");
+    }
+
+    .space{
+        height: 0%;
+    }
+
+    .page{
+        display: flex;
+        flex-direction: column-reverse;
+        background-image: url("../assets/white_shape.jpg");
+        background-size:100vh;
+    }
+
+    .content{
+        margin-left: 5%;
+        height: auto;
+        overflow: auto;
+        text-overflow: inherit;
+        word-wrap: normal;
+        overflow-y: auto;
+    }
+
+    .content h2{
+        font-size: 30px;
+    }
+
+    .content p{
+        font-size: 18px;
+    }
+
+    .right-side {
+        margin-top: 10%;
+        margin-left: 0%;
+        margin-right: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        flex: auto;
+    }
+
+    .left-side{
+        margin-top: 20%;
+        flex: auto;
+    }
+
+    .asset1{
+        width:5%;
+        height:10vh;
     }
 
 }
