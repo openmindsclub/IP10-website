@@ -107,12 +107,14 @@ export default {
 
 .content h2{
     font-size: 3em;
+    color: #4B535C;
     font-weight: bold;
     font-style: italic;
 }
 
 .content p{
     font-size: 2em;
+    color: #4B535C;
 }
 
 .content .participer-button{

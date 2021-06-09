@@ -5,7 +5,7 @@
         	<i class="fa fa-bars fa-2x"></i>
         </div>
         <div class="menu">
-        	<ul v-bind:class="{showing: sidebar}">>
+        	<ul v-bind:class="{showing: sidebar}">
 				<li v-for="item in items" :key="item.title">
 					<a :href="item.path">{{ item.title }}</a>
 				</li>
@@ -20,10 +20,9 @@ export default {
 	data: () => ({
 		sidebar: false,
 		items: [
-			{ title: "Acceuil", path: "/#/acceuil"},
-			{ title: "Event", path: "/#/event"},
-			{ title: "Planning", path: "/#/planning"},
-			{ title: "Sponsor", path: "/#/sponsor"},
+			{ title: "Event", path: "/#/Event"},
+			{ title: "Activités", path: "/#/Activités"},
+			{ title: "Inscriptions", path: "/#/Inscriptions"},
 			{ title: "A propos", path: "/#/apropos"},
 		]
 	}),
@@ -55,23 +54,10 @@ nav ul {
     list-style: none;
     background: rgba(0, 0, 0, 0);
     overflow: hidden;
-    color: #fff;
-    padding: 0;
-    text-align: center;
-    margin: 0;
-    transition: 1s;
-}
-
-nav ul {
-    line-height: 45px;
-    list-style: none;
-    background: rgba(0, 0, 0, 0);
-    overflow: hidden;
-    color: #fff;
+    color: #4B535C;
     padding: 0;
     text-align: right;
     margin: 0;
-    transition: 1s;
 }
 
 nav ul li {
@@ -82,12 +68,12 @@ nav ul li {
 nav ul li a {
     font-family: 'Bungee', cursive;
     text-decoration: none !important;
-    color: #000;
+    color: #4B535C;
     font-size: 18px;
 }
 
 nav ul li a:hover{
-    color: rgb(231, 22, 57);
+    color: #E1CF4B;
 }
 
 .menu-icon {
