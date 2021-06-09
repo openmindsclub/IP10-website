@@ -11,14 +11,14 @@
                     <p>
                         Notre evenement phare est enfin là, au programme des conferences, panels, workshops et plein d'activités, vous pouvez en apprendre plus juste en bas!
                     </p>
-                    <img @click="Registration()" src="../assets/participer_button.png" class="participer-button"/>
+                    <img @click="Registration()" src="../assets/welcome_screen/participer_button.png" class="participer-button"/>
                 </div>
             </div>
             <div class="right-side">
                 <img class="clubLogo" src="../assets/omc_logo_grey.png"/>
                 <div class = "IPNameLogo sec1">
                     <img class="eventName"  src="../assets/install_party_new_era.png"/>
-                    <img class="asset1"  src="../assets/welcome_special_asset1.png"/>
+                    <img class="asset1"  src="../assets/welcome_screen/welcome_special_asset1.png"/>
                     <img class="IPlogo"  src="../assets/logoIP10.png"/>
                 </div>
                 <div class = "IPNameLogo sec2">
@@ -61,7 +61,7 @@ export default {
 
 <style scoped >
 .hero-acceuil {
-    background-image: url("../assets/Index_background_3.jpg");
+    background-image: url("../assets/backgrounds/Index_background_3.jpg");
   /* Set a specific height */
   height: 100vh;
   width: 100%;
@@ -199,7 +199,7 @@ export default {
 
 @media (max-width: 1200px) and (max-aspect-ratio: 10/9)  {
     .hero-acceuil {
-        background-image: url("../assets/white_shape.jpg");
+        background-image: url("../assets/backgrounds/white_shape.jpg");
     }
 
     .space{
@@ -209,7 +209,7 @@ export default {
     .page{
         display: flex;
         flex-direction: column-reverse;
-        background-image: url("../assets/white_shape.jpg");
+        background-image: url("../assets/backgrounds/white_shape.jpg");
         background-size:100vh;
     }
 
@@ -256,7 +256,7 @@ export default {
 
 @media (max-width: 600px){
     .hero-acceuil {
-        background-image: url("../assets/white_shape.jpg");
+        background-image: url("../assets/backgrounds/white_shape.jpg");
     }
 
     .space{
@@ -266,7 +266,7 @@ export default {
     .page{
         display: flex;
         flex-direction: column-reverse;
-        background-image: url("../assets/white_shape.jpg");
+        background-image: url("../assets/backgrounds/white_shape.jpg");
         background-size:100vh;
     }
 
