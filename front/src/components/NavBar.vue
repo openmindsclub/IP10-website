@@ -17,6 +17,7 @@
 
 <script>
 export default {
+	name: "NavBar",
 	data: () => ({
 		sidebar: false,
 		items: [

@@ -9,7 +9,11 @@ import router from './router'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
+import NavBar from './components/NavBar'
+
 Vue.config.productionTip = false
+
+Vue.component('NavBar', NavBar);
 
 new Vue({
   router,

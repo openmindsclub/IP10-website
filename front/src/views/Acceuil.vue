@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="hero-acceuil">
         <div class="space"></div>
 
@@ -29,15 +30,13 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 <script>
-import Button from "../components/Button";
 export default {
   name: "Acceuil",
-  component: {
-    Button,
-  },
+  component: {},
   data: () => ({
       pics: [
           { title: "facebook", path: "/#/acceuil"},
