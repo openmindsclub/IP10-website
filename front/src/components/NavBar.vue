@@ -9,7 +9,9 @@
 				<li v-for="item in items" :key="item.title">
 					<a v-if= "!item.composed" :href="item.path">{{ item.title }}</a>
 					<div v-else class="dropdown">
-  						<p class="dropbtn">{{item.title}}</p>
+						<button class="dropbtn">{{item.title}}
+      						<i class="fa fa-caret-down"></i>
+    					</button>
   						<div class="dropdown-content">
 							<a  v-for="subItem in item.components" :key="subItem.title" :href="subItem.path">{{ subItem.title }}</a>
   						</div>
@@ -87,11 +89,15 @@ nav ul li a {
     font-size: 18px;
 }
 
-nav ul li p {
+nav ul li .dropbtn {
     font-family: 'Bungee', cursive;
     text-decoration: none !important;
     color: #4B535C;
+	background: rgba(0, 0, 0, 0);
     font-size: 18px;
+	border: none;
+  	outline: none;
+	margin: 0;
 }
 
 nav ul li a:hover{
@@ -113,6 +119,8 @@ nav ul li a:hover{
   display: none;
   color: #F2F5FE;
   position: fixed;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px;
   z-index: 99999;
 }
 
@@ -120,16 +128,12 @@ nav ul li a:hover{
 .dropdown-content a {
   text-decoration: none;
   display: block;
+  text-align: left;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
 	display: block;
-}
-
-
-nav a.router-link-exact-active {
-  text-decoration: underline;
 }
 
 .menu-icon {
