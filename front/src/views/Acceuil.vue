@@ -199,8 +199,17 @@ export default {
 }
 
 @media (max-width: 1200px) and (max-aspect-ratio: 10/9)  {
+
     .hero-acceuil {
         background-image: url("../assets/backgrounds/white_shape.jpg");
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+        scrollbar-width: none;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .hero-acceuil::-webkit-scrollbar {
+      display: none;
     }
 
     .space{
@@ -210,8 +219,6 @@ export default {
     .page{
         display: flex;
         flex-direction: column-reverse;
-        background-image: url("../assets/backgrounds/white_shape.jpg");
-        background-size:100vh;
     }
 
     .content{
@@ -251,6 +258,10 @@ export default {
     .asset1{
         width:5%;
         height:10vh;
+    }
+
+    .content .participer-button{
+        margin-bottom: 10%;
     }
 
 }
@@ -258,6 +269,14 @@ export default {
 @media (max-width: 600px){
     .hero-acceuil {
         background-image: url("../assets/backgrounds/white_shape.jpg");
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+        scrollbar-width: none;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .hero-acceuil::-webkit-scrollbar {
+      display: none;
     }
 
     .space{
@@ -267,8 +286,6 @@ export default {
     .page{
         display: flex;
         flex-direction: column-reverse;
-        background-image: url("../assets/backgrounds/white_shape.jpg");
-        background-size:100vh;
     }
 
     .content{
@@ -281,11 +298,11 @@ export default {
     }
 
     .content h2{
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .content p{
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .right-side {
@@ -301,13 +318,17 @@ export default {
     }
 
     .left-side{
-        margin-top: 20%;
+        margin-top: 10%;
         flex: auto;
     }
 
     .asset1{
         width:5%;
         height:10vh;
+    }
+
+    .content .participer-button{
+        margin-bottom: 10%;
     }
 
 }
@@ -352,13 +373,13 @@ export default {
     .eventName{
         width:100%;
         height:auto;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
 
     .IPlogo{
         width:50%;
         height:auto;
-        margin-bottom: 20%;
+        margin-bottom: none;
     }
 
     .asset1{

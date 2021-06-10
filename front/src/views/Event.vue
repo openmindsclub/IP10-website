@@ -30,7 +30,7 @@
                         <b-row align-h="center" align-v="center">
                             <b-col md="7">
                                 <div>
-                                    <b-img center  src="/img/logoIP10_edition.88a91c9e.png" fluid alt="Responsive image" class="IPlogo"></b-img>
+                                    <b-img center :src="require('../assets/logoIP10_edition.png')" fluid alt="Responsive image" class="IPlogo"></b-img>
                                 </div>
                             </b-col>
                         </b-row>
@@ -117,16 +117,27 @@ export default {
 
 @media(max-width: 770px){
 
+    .hero {
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+        scrollbar-width: none;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .hero::-webkit-scrollbar {
+      display: none;
+    }
+
     .space{
         height: 5%;
     }
 
     .leftside h2{
-        font-size: 2em;
+        font-size: 20px;
     }
 
     .leftside p{
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .rightside .clubLogo{
@@ -136,6 +147,7 @@ export default {
     .rightside .IPlogo{
         width:50%;
         margin-top: 10%;
+        margin-bottom: 10%;
     }
 }
 
