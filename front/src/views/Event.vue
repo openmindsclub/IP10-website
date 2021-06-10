@@ -1,5 +1,5 @@
 <template>
-    <div class="hero">
+    <div id="event" class="hero">
         <div class="space"></div>
         <b-container fluid class="page">
             <b-row align-v="center" align-h="center">

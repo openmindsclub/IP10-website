@@ -27,13 +27,13 @@ export default {
 	data: () => ({
 		sidebar: false,
 		items: [
-			{ title: "Acceuil", path: "/#/welcome", composed: false},
-			{ title: "Event", path: "/#/event", composed: false},
+			{ title: "Acceuil", path: "#welcome", composed: false},
+			{ title: "Event", path: "#event", composed: false},
 			{ title: "Activities", composed: true, components:[
-				{ title: "Conferances", path: "/#/conferences"},
-				{ title: "Workshops", path: "/#/workshops"},
-				{ title: "Other Activities", path: "/#/activities"},
-				{ title: "Stands", path: "/#/stands"}
+				{ title: "Conferances", path: "#conferences"},
+				{ title: "Workshops", path: "#workshops"},
+				{ title: "Other Activities", path: "#activities"},
+				{ title: "Stands", path: "#stands"}
 			]},
 			{ title: "Inscriptions", path: "/#/registration", composed: false},
 			{ title: "A propos", composed: true, components:[

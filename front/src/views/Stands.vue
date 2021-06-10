@@ -1,5 +1,5 @@
 <template>
-    <div class="hero">
+    <div id="stands" class="hero">
 
     </div>
 </template>

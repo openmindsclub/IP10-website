@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="hero-acceuil">
+    <div id="welcome" class="hero-acceuil">
         <div class="space"></div>
 
         <div class="page">
