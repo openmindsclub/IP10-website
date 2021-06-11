@@ -28,8 +28,6 @@
                         <li v-for="social_media in social_medias" :key="social_media.title">
                             <a :class="social_media.title" :href="social_media.url" target="_blank"><i :class="social_media.class_image"></i></a>
                         </li>
-                        <li></i></a></li>
-
                     </ul>
                 </b-col>
             </b-row>
