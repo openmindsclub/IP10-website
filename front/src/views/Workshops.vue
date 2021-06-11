@@ -1,9 +1,12 @@
 <template>
     <div id="workshops" class="hero">
+        <div class="pricipal-title">
+            <h2>Workshops</h2>
+        </div>
         <b-container fluid class="page">
             <b-row>
                 <b-col class="workshop1" md="4" sm="12">
-                    <h2>{{workshops[0].title}}</h2>
+                    <h3>{{workshops[0].title}}</h3>
                     <div class="formation-section">
                         <div class="formation-paragraph">
                             <Paragraph title="Workshop" :content="workshops[0].content"/>
@@ -23,7 +26,7 @@
                     </div>
                 </b-col>
                 <b-col class="workshop2" md="4" sm="12">
-                    <h2>{{workshops[1].title}}</h2>
+                    <h3>{{workshops[1].title}}</h3>
                     <div class="formation-section">
                         <div class="formation-paragraph">
                             <Paragraph title="Workshop" :content="workshops[1].content"/>
@@ -105,11 +108,19 @@ export default {
 
 .page{
     padding-left: 10%;
-    padding-top:6%;
+    padding-top:3%;
     padding-right: 3%;
 }
 
 h2{
+    padding-left: 13%;
+    padding-top:4%;
+    color: white;
+    font-size: 70px;
+    text-align: left;
+}
+
+h3{
     color: white;
     font-size: 50px;
     text-align: center;
@@ -138,7 +149,12 @@ h2{
 }
 
 @media(max-width: 1350px){
+
     h2{
+        font-size: 50px;
+    }
+
+    h3{
         font-size: 35px;
     }
 
@@ -152,7 +168,7 @@ h2{
 }
 
 @media(max-width: 950px){
-    h2{
+    h3{
         font-size: 30px;
     }
 
