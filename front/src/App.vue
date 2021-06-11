@@ -28,13 +28,11 @@ export default {
     Conferances,
     Workshops,
     Activities,
-    Stands
+    Stands,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
+
 </style>
