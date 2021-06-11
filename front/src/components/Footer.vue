@@ -1,7 +1,7 @@
 <template>
     <footer>
         <b-container fluid>
-            <b-row>
+            <b-row align-h="around">
                 <b-col md="6" sm="12">
                     <h6>Local</h6>
                     <p>CRI, USTHB, Bab Ezzouar, 16111 Bab Ezzouar, Algeria</p>
@@ -17,13 +17,13 @@
             <hr>
         </b-container>
         <b-container fluid>
-            <b-row>
-                <b-col md="8" sm="6" xs="12">
+            <b-row align-h="around">
+                <b-col md="6" sm="6" xs="12">
                     <p class="copyright-text">Made by Humans of
                         <a href="http://openmindsclub.net/" target="_blank">OpenMindsClub</a>.
                     </p>
                 </b-col>
-                <b-col md="4" sm="6" xs="12">
+                <b-col md="3" sm="6" xs="12">
                     <ul class="social-icons">
                         <li v-for="social_media in social_medias" :key="social_media.title">
                             <a :class="social_media.title" :href="social_media.url" target="_blank"><i :class="social_media.class_image"></i></a>
@@ -90,10 +90,7 @@ footer h6
 {
   display:inline-block
 }
-footer .social-icons
-{
-  text-align:right
-}
+
 footer .social-icons a
 {
   width:40px;
