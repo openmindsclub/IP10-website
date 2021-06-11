@@ -25,10 +25,11 @@
                 </b-col>
                 <b-col md="4" sm="6" xs="12">
                     <ul class="social-icons">
-                        <li><a class="facebook" href="https://www.facebook.com/openmindsclub/" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                        <li><a class="twitter" href="https://twitter.com/clubopenminds" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a class="instagram" href="https://www.instagram.com/openmindsclub/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a class="linkedin" href="https://www.linkedin.com/company/open-minds-club" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li v-for="social_media in social_medias" :key="social_media.title">
+                            <a :class="social_media.title" :href="social_media.url" target="_blank"><i :class="social_media.class_image"></i></a>
+                        </li>
+                        <li></i></a></li>
+
                     </ul>
                 </b-col>
             </b-row>
@@ -39,6 +40,15 @@
 <script>
 export default {
 	name: "Footer",
+    data: () => ({
+        social_medias: [
+            { title: "facebook", url: "https://www.facebook.com/openmindsclub/", class_image:'fab fa-facebook' },
+            { title: "twitter", url: "https://twitter.com/clubopenminds", class_image:'fab fa-twitter'},
+            { title: "linkedin", url: "https://www.linkedin.com/company/open-minds-club", class_image:'fab fa-linkedin'},
+            { title: "instagram", url: "https://www.instagram.com/openmindsclub/", class_image:'fab fa-instagram'},
+            { title: "youtube", url: "https://www.youtube.com/channel/UCTS5jQGSPHuuibdqLUqFAqw", class_image:'fab fa-youtube'},
+        ]
+    })
 };
 </script>
 
