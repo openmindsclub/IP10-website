@@ -194,6 +194,14 @@ footer .social-icons a
 {
   background-color:#ea4c89
 }
+
+.social-icons a.youtube:hover
+{
+  background-color:#FF0000
+}
+
+
+
 @media (max-width:767px)
 {
   .social-icons li.title
