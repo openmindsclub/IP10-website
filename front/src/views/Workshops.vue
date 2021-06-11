@@ -69,7 +69,7 @@ export default {
               content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
               logo_path: 'godot.png',
               alt_image: "godot logo",
-              formateur: "Mohamed",
+              formateur: "AIT AMARA Mohamed & SOUIDI Mohammed Amine",
               description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
               image: 'python.svg',
           },
