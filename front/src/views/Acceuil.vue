@@ -22,11 +22,13 @@
                     <img class="asset1"  src="../assets/welcome_screen/welcome_special_asset1.png"/>
                     <img class="IPlogo"  src="../assets/logoIP10.png"/>
                 </div>
-                <div class = "IPNameLogo sec2">
-                    <div v-for="pic in pics" :key="pic.title">
-                        <img class="socialMedia" :src="getImgUrl(pic.title)" v-bind:alt="pic.title">
-                    </div>
-                </div>
+
+                    <ul class="IPNameLogo sec2 social-icons">
+                        <li v-for="social_media in social_medias" :key="social_media.title">
+                            <a :class="social_media.title" :href="social_media.url" target="_blank"><i :class="social_media.class_image"></i></a>
+                        </li>
+                </ul>
+
             </div>
         </div>
     </div>
@@ -44,6 +46,13 @@ export default {
           { title: "gmail", path: "/#/planning"},
           { title: "instagram", path: "/#/sponsor"},
           { title: "youtube", path: "/#/apropos"},
+      ],
+      social_medias: [
+          { title: "facebook", url: "https://www.facebook.com/openmindsclub/", class_image:'fab fa-facebook' },
+          { title: "twitter", url: "https://twitter.com/clubopenminds", class_image:'fab fa-twitter'},
+          { title: "linkedin", url: "https://www.linkedin.com/company/open-minds-club", class_image:'fab fa-linkedin'},
+          { title: "instagram", url: "https://www.instagram.com/openmindsclub/", class_image:'fab fa-instagram'},
+          { title: "youtube", url: "https://www.youtube.com/channel/UCTS5jQGSPHuuibdqLUqFAqw", class_image:'fab fa-youtube'},
       ]
   }),
   methods: {
@@ -174,9 +183,6 @@ export default {
     height:100%;
 }
 
-.socialMedia{
-    width:40%;
-}
 
 @media(max-width: 1300px) {
     .content h2{
@@ -350,15 +356,10 @@ export default {
         display:none;
     }
 
-
-    .IPNameLogo{
-        display: flex;
+    .sec1{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-    }
-
-    .sec1{
         width:auto;
         height: auto;
         margin-top: 10%;
@@ -367,7 +368,7 @@ export default {
     }
 
     .sec2{
-        display: none;
+        margin-left: 30%;
     }
 
     .eventName{
@@ -386,10 +387,86 @@ export default {
         display: none;
     }
 
-    .socialMedia{
-        width:40%;
-    }
+}
 
+.social-icons{
+    padding-left:0;
+    width: 40%;
+    margin-bottom:0;
+    list-style:none
+}
+
+.social-icons li{
+    display:inline-block;
+    margin-bottom:4px
+}
+
+.social-icons li.title{
+    margin-right:15px;
+    text-transform:uppercase;
+    color:#96a2b2;
+    font-weight:700;
+    font-size:13px
+}
+
+.social-icons a{
+    background-color:#4B535C;
+    color:#F2F5FE;
+    font-size:16px;
+    display:inline-block;
+    line-height:44px;
+    width:44px;
+    height:44px;
+    text-align:center;
+    margin-right:8px;
+    border-radius:100%;
+    -webkit-transition:all .2s linear;
+    -o-transition:all .2s linear;
+    transition:all .2s linear
+}
+
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover{
+    color:#fff;
+    background-color:#29aafe
+}
+
+.social-icons.size-sm a
+{
+    line-height:34px;
+    height:34px;
+    width:34px;
+    font-size:14px
+}
+
+.social-icons a.facebook:hover{
+    background-color:#3b5998
+}
+
+.social-icons a.twitter:hover{
+    background-color:#00aced
+}
+
+.social-icons a.linkedin:hover{
+  background-color:#007bb6
+}
+
+.social-icons a.instagram:hover{
+    background-color:#ea4c89
+}
+
+.social-icons a.youtube:hover{
+    background-color:#FF0000
+}
+
+
+
+@media (max-width:767px){
+
+    .social-icons li.title{
+        display:block;
+        margin-right:0;
+        font-weight:600
+    }
 }
 
 </style>
