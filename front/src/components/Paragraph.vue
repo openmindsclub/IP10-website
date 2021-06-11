@@ -1,6 +1,6 @@
 <template>
     <div class="paragraph">
-        <h2>{{ title }}</h2>
+        <h3>{{ title }}</h3>
         <img class="large_white_line"  src="../assets/large_white_line.png"/>
         <p>{{ content }}</p>
     </div>
@@ -9,7 +9,7 @@
 <script>
 export default {
   name: "Paragraph",
-  props: ['title', 'content', 'image']
+  props: ['title', 'content'],
 };
 </script>
 
@@ -21,7 +21,7 @@ export default {
     padding: 5px;
 }
 
-h2{
+h3{
     color: white;
     font-size: 25px;
 }
