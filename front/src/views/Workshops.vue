@@ -151,7 +151,7 @@ h3{
 @media(max-width: 1350px){
 
     h2{
-        font-size: 50px;
+        font-size: 60px;
     }
 
     h3{
@@ -168,6 +168,11 @@ h3{
 }
 
 @media(max-width: 950px){
+
+    h2{
+        font-size: 50px;
+    }
+
     h3{
         font-size: 30px;
     }
@@ -186,6 +191,41 @@ h3{
 
     .space{
         height: 30%;
+    }
+}
+
+@media(max-width: 765px){
+
+    .hero {
+        height: fit-content;
+        background-repeat: repeat;
+    }
+
+    h2{
+        padding-top: 8%;
+        padding-left: 8%;
+        padding-bottom: 8%;
+        font-size: 3.8em;
+    }
+
+    h3{
+        font-size: 40px;
+    }
+
+    .workshop1 .logo{
+        width: 35%;
+    }
+
+    .workshop2 .logo{
+        width: 30%;
+    }
+
+    .photo-container{
+        width: 100%
+    }
+
+    .space{
+        display: none;
     }
 }
 
