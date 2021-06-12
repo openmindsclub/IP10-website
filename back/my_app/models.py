@@ -13,31 +13,32 @@ feedbacks_col = mongo.db['feedbacks'] # participant collection
 participant_col = mongo.db['participant'] # verifing email
 
 def email_exist(email):
-    result = participant_col.find_one({"email":email})
+    result = participant_col.find_one({"email": email})
     return result != None
 
 
 def create_feedback(name, email, message):
     post = {
-        "name":name,
-        "email":email,
-        "message":message
+        "name": name,
+        "email": email,
+        "message": message
     }
     return feedbacks_col.insert_one(post)
 
 
-def create_participant(first_name, last_name, email, status, date_of_birth, conferences, workshops, chasse_au_tresor = False, battle_grap = False):
+def create_participant(first_name, last_name, email, status, date_of_birth, conferences, workshops, chasse_au_tresor=False, battle_grap=False):
     if email_exist(email):
         raise EmailAlreadyExistError(email)
+
     post = {
-        "first_name":first_name,
-        "last_name":last_name,
-        "date_of_birth":date_of_birth,
-        "email":email,
+        "first_name": first_name,
+        "last_name": last_name,
+        "date_of_birth": date_of_birth,
+        "email": email,
         "status": status,
         "conferences" : {
             "panel1": conferences["panel1"],
-            "panel2":conferences["panel2"],
+            "panel2": conferences["panel2"],
             "conference1": conferences["conference1"],
             "conference2": conferences["conference2"],
             "conference3": conferences["conference3"]
@@ -48,5 +49,5 @@ def create_participant(first_name, last_name, email, status, date_of_birth, conf
         },
         "chasse_au_tresor": chasse_au_tresor,
         "battle_graphique":battle_grap
-        }
+    }
     return participant_col.insert_one(post)
