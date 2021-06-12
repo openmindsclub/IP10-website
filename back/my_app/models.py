@@ -18,6 +18,13 @@ def email_exist(email):
 
 
 def create_feedback(name, email, message):
+    """
+    insert a feedback into the database
+
+    Parameters:
+        name(str), email(str), message(str)
+    """
+
     post = {
         "name": name,
         "email": email,
@@ -27,6 +34,37 @@ def create_feedback(name, email, message):
 
 
 def create_participant(first_name, last_name, email, status, date_of_birth, conferences, workshops, chasse_au_tresor=False, battle_grap=False, team_emails=[]):
+
+    """
+    function that's insert a participant to the database
+
+    Parameters:
+        first_name and last_name(str)
+        email(str): will be stocked in the data base, it's unique so we check if it
+                exist and raise an ValueError exception if it does
+        date_of_birth(str): date of birth
+        gender(str): "male", "female" or "other"
+        status(str): one of the following strings "Unemployed", "High schooler",
+                "Undergraduate", "Graduate", "Masters", "Doctorate", "Employed", "Freelance", "Other"
+        phone_number(str)
+        conferences(dict of bools): dict of booleans which contains all 5
+                conferences and panels, true if he registered to one of them,
+                and false elswhere
+        workshops(dict of bools): dict of booleans which contains the 2 disponible
+                workshops, true if he registered to one of them, and false elswhere
+        chasse_au_tresor(bool): true if it participate in the tresor hunt, false if it doesn't, Default:False
+        battle_grap(bool): true if it participate in the battle graphique, false if it doesn't, Default:False
+        team_emails(list of str): contains the lists of the teams members in the tresor hunt
+                    is only taken into consideration if chasse_au_tresor=True, Default:[]
+
+    Raises:
+        EmailAlreadyExistError if the email already exist in the database.
+
+    Return:
+        True if the particiapant was added successfully and false elswhere
+    """
+
+
     if email_exist(email):
         raise EmailAlreadyExistError(email)
 
@@ -52,6 +90,6 @@ def create_participant(first_name, last_name, email, status, date_of_birth, conf
     }
 
     if chasse_au_tresor:
-        post["team_emails"] = team_emails 
+        post["team_emails"] = team_emails
 
     return participant_col.insert_one(post)
