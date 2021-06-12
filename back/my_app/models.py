@@ -3,6 +3,7 @@ from pymongo import database
 from flask_pymongo import PyMongo
 
 from my_app import app
+from my_app.exceptions import *
 
 # mongo configuration
 db_name = "omcIP" # database name
@@ -27,7 +28,7 @@ def create_feedback(name, email, message):
 
 def create_participant(first_name, last_name, email, status, date_of_birth, conferences, workshops, chasse_au_tresor = False, battle_grap = False):
     if email_exist(email):
-        raise ValueError("the email already exist in the database")
+        raise EmailAlreadyExistError(email)
     post = {
         "first_name":first_name,
         "last_name":last_name,
