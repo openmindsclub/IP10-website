@@ -3,26 +3,22 @@
 
         <b-container fluid class="page">
             <b-row>
-                <b-col lg="3" md="4" sm="12">
+                <b-col md="3" sm="12">
                     <div class="battle-graphic">
-                        <Paragraph title="Battle Graphique" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                        <Paragraph title="Battle Graphique" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." color="gray"/>
                     </div>
                 </b-col>
             </b-row>
-            <b-row>
-                <b-col lg="8" md="7" sm="0">
-                    <div class="void"></div>
-                </b-col>
-                <b-col lg="3" md="4" sm="12">
+        </b-container>
+        <b-container fluid class="page">
+            <b-row align-v="end" align-h="end">
+                <b-col md="3" sm="12">
                     <div class="tresor-hunt">
                         <Paragraph title="Chasse au Tresor" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
                     </div>
                 </b-col>
             </b-row>
         </b-container>
-
-
-
     </div>
 </template>
 
@@ -54,8 +50,8 @@ export default {
 }
 
 .page{
-    padding-left: 10%;
-    padding-top:8%;
-    padding-right: 3%;
+    padding-left: 5%;
+    padding-top:4%;
+    padding-right: 5%;
 }
 </style>
