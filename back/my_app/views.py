@@ -4,6 +4,7 @@ from flask_cors import CORS
 
 from my_app import app
 from my_app import models
+from my_app.exceptions import *
 
 api = Api(app)
 CORS(app)
@@ -29,7 +30,11 @@ class participant(Resource):
         else:
             team_emails = []
 
-        inserted = models.create_participant(request.json['first_name'], request.json['last_name'], request.json['email'], request.json['status'], request.json['date_of_birth'], dict(request.json['conferences']), dict(request.json['workshops']), request.json['chasse_au_tresor'], request.json['battle_graphique'], team_emails)
+        try:
+            inserted = models.create_participant(request.json['first_name'], request.json['last_name'], request.json['email'], request.json['status'], request.json['date_of_birth'], dict(request.json['conferences']), dict(request.json['workshops']), request.json['chasse_au_tresor'], request.json['battle_graphique'], team_emails)
+        except EmailAlreadyExistError as e:
+            return jsonify({"error": "The email is already being used"})
+
         if (inserted):
             return jsonify({"success":"Paritcipant added successfully"})
         else:
