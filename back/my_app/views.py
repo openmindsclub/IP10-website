@@ -24,8 +24,12 @@ api.add_resource(feedback, '/feedback')
 
 class participant(Resource):
     def post(self):
-        print(request)
-        inserted = models.create_participant(request.json['first_name'], request.json['last_name'], request.json['email'], request.json['status'], request.json['date_of_birth'], dict(request.json['conferences']), dict(request.json['workshops']), request.json['chasse_au_tresor'], request.json['battle_graphique'])
+        if 'team_emails' in request.json:
+            team_emails = list(request.json['team_emails'])
+        else:
+            team_emails = []
+
+        inserted = models.create_participant(request.json['first_name'], request.json['last_name'], request.json['email'], request.json['status'], request.json['date_of_birth'], dict(request.json['conferences']), dict(request.json['workshops']), request.json['chasse_au_tresor'], request.json['battle_graphique'], team_emails)
         if (inserted):
             return jsonify({"success":"Paritcipant added successfully"})
         else:

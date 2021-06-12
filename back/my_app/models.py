@@ -26,7 +26,7 @@ def create_feedback(name, email, message):
     return feedbacks_col.insert_one(post)
 
 
-def create_participant(first_name, last_name, email, status, date_of_birth, conferences, workshops, chasse_au_tresor=False, battle_grap=False):
+def create_participant(first_name, last_name, email, status, date_of_birth, conferences, workshops, chasse_au_tresor=False, battle_grap=False, team_emails=[]):
     if email_exist(email):
         raise EmailAlreadyExistError(email)
 
@@ -44,10 +44,14 @@ def create_participant(first_name, last_name, email, status, date_of_birth, conf
             "conference3": conferences["conference3"]
         },
         "workshops": {
-        "python":workshops["python"],
-        "godot": workshops["godot"]
+            "python":workshops["python"],
+            "godot": workshops["godot"]
         },
         "chasse_au_tresor": chasse_au_tresor,
         "battle_graphique":battle_grap
     }
+
+    if chasse_au_tresor:
+        post["team_emails"] = team_emails 
+
     return participant_col.insert_one(post)
