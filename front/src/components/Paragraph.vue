@@ -23,12 +23,12 @@ export default {
 
 h4{
     color: white;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 p{
     color: white;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 
