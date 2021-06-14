@@ -13,7 +13,16 @@ export default {
 <style scoped >
 h2{
     color: white;
-    font-size: 30px;
+    font-size: 70px;
     text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+@media(max-width: 800px){
+
+    h2{
+        font-size: 50px;
+    }
 }
 </style>
