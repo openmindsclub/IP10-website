@@ -13,7 +13,7 @@ export default {
 <style scoped >
 h2{
     color: white;
-    font-size: 70px;
+    font-size: 30px;
     text-align: center;
 }
 </style>
