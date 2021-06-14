@@ -1,85 +1,93 @@
 <template>
     <div class="">
         <h2>Conferenciers</h2>
-        <carousel-3d :controls-visible="true" :controls-prev-html="'&#10092; '" :controls-next-html="'&#10093;'"
-               :controls-width="30" :controls-height="60" :autoplay="true" :autoplay-timeout="6000" :perspective="0" :space="400" :display="3" @after-slide-change="onAfterSlideChange" @before-slide-change="onBeforeSlideChange" @last-slide="onLastSlide">
-            <slide v-for="sepeaker in speakers" :key="sepeaker.index" :index="sepeaker.index">
-                <figure>
-                    <img src="https://picsum.photos/200/300">
-                    <figcaption>
-                        The sky is the limit only for those who aren't afraid to fly!
-                        The sky is the limit only for those who aren't afraid to fly!
-                    </figcaption>
-                </figure>
-            </slide>
-        </carousel-3d>
+        <b-container fluid>
+            <b-row align-v="center" align-h="center">
+                <b-col xl="6" lg="10" md="12">
+                    <carousel-3d :controls-visible="true" :controls-prev-html="'&#10092; '" :controls-next-html="'&#10093;'"
+                           :controls-width="30" :controls-height="60" :autoplay="true" :autoplay-timeout="6000" :perspective="0" :space="400" :display="3" @after-slide-change="onAfterSlideChange">
+                        <slide v-for="sepeaker in speakers" :key="sepeaker.index" :index="sepeaker.index">
+                            <figure>
+                                <img :src="sepeaker.image">
+                                <figcaption>
+                                    {{sepeaker.smallDescription}}
+                                </figcaption>
+                            </figure>
+                        </slide>
+                    </carousel-3d>
+                </b-col>
+            </b-row>
+            <b-row align-v="center" align-h="center">
+                <b-col  xl="5" lg="6" md="12">
+                    <Paragraph :title="speakers[curent_index].name" :content="speakers[curent_index].description"/>
+                </b-col>
+            </b-row>
+        </b-container>
     </div>
 </template>
 
 <script>
 import { Carousel3d, Slide } from 'vue-carousel-3d';
+import Paragraph from '../components/Paragraph.vue';
 export default {
     name: "Speakers",
     components: {
         Carousel3d,
-        Slide
+        Slide,
+        Paragraph
     },
     data: () => ({
+        curent_index : 0,
         speakers: [
             {
                 index: 0,
-                name: "",
-                smallDescription: "",
-                description: "",
-                image: ""
+                name: "Aymen Khouas",
+                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                image: "https://picsum.photos/200/300"
             },
             {
                 index: 1,
-                name: "",
-                smallDescription: "",
-                description: "",
-                image: ""
+                name: "Dovahkin",
+                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                image: "https://picsum.photos/200/300"
             },
             {
                 index: 2,
-                name: "",
-                smallDescription: "",
-                description: "",
-                image: ""
+                name: "Link",
+                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                image: "https://picsum.photos/200/300"
             },
             {
                 index: 3,
-                name: "",
-                smallDescription: "",
-                description: "",
-                image: ""
+                name: "Luck skywalker",
+                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                image: "https://picsum.photos/200/300"
             },
             {
                 index: 4,
-                name: "",
-                smallDescription: "",
-                description: "",
-                image: ""
+                name: "Jules cesar",
+                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                image: "https://picsum.photos/200/300"
             },
             {
                 index: 5,
-                name: "",
-                smallDescription: "",
-                description: "",
-                image: ""
+                name: "another random character",
+                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                image: "https://picsum.photos/200/300"
             }
         ]
     }),
     methods: {
     onAfterSlideChange(index) {
-      console.log('@onAfterSlideChange Callback Triggered', 'Slide Index ' + index)
+        this.curent_index = index
+      console.log(this.curent_index)
     },
-    onBeforeSlideChange(index) {
-      console.log('@onBeforeSlideChange Callback Triggered', 'Slide Index ' + index)
-    },
-    onLastSlide(index) {
-      console.log('@onLastSlide Callback Triggered', 'Slide Index ' + index)
-    }
   },
 };
 </script>
@@ -107,9 +115,5 @@ h2{
   font-size: 12px;
   min-width: 100%;
   box-sizing: border-box;
-}
-
-.carousel-3d-controls a {
-    color: white;
 }
 </style>
