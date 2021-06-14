@@ -1,6 +1,8 @@
 <template>
-    <div class="hero">
+    <div class="back">
+        <div class="elevated-form">
 
+        </div>
     </div>
 </template>
 
@@ -12,7 +14,7 @@ export default {
 
 
 <style scoped >
-.hero{
+.back{
     background-image: url("../assets/backgrounds/Event_background_2.jpg");
 
     height: 100vh;
@@ -22,8 +24,13 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
 
-    display: flex;
-    flex-direction: column;
+.elevated-form{
+    height: auto;
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>

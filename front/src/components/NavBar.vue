@@ -7,14 +7,17 @@
         <div class="menu">
         	<ul v-bind:class="{showing: sidebar}">
 				<li v-for="item in items" :key="item.title">
-					<a v-if= "!item.composed" :href="item.path">{{ item.title }}</a>
-					<div v-else class="dropdown">
-						<button class="dropbtn">{{item.title}}
-      						<i class="fa fa-caret-down"></i>
-    					</button>
-  						<div class="dropdown-content">
-							<a  v-for="subItem in item.components" :key="subItem.title" :href="subItem.path">{{ subItem.title }}</a>
-  						</div>
+					<router-link v-if= "item.route" :to="item.path">{{ item.title }}</router-link>
+					<div v-else>
+						<a v-if= "!item.composed" :href="item.path">{{ item.title }}</a>
+						<div v-else class="dropdown">
+							<button class="dropbtn">{{item.title}}
+	      						<i class="fa fa-caret-down"></i>
+	    					</button>
+	  						<div class="dropdown-content">
+								<a  v-for="subItem in item.components" :key="subItem.title" :href="subItem.path">{{ subItem.title }}</a>
+	  						</div>
+						</div>
 					</div>
 				</li>
             </ul>
@@ -29,16 +32,16 @@ export default {
 	data: () => ({
 		sidebar: false,
 		items: [
-			{ title: "Acceuil", path: "#welcome", composed: false},
-			{ title: "Event", path: "#event", composed: false},
-			{ title: "Activities", composed: true, components:[
+			{ title: "Acceuil", route:false, path: "#welcome", composed: false},
+			{ title: "Event", route:false, path: "#event", composed: false},
+			{ title: "Activities", route:false, composed: true, components:[
 				{ title: "Conferances", path: "#conferences"},
 				{ title: "Workshops", path: "#workshops"},
 				{ title: "Other Activities", path: "#activities"},
 				{ title: "Stands", path: "#stands"}
 			]},
-			{ title: "Inscriptions", path: "/#/registration", composed: false},
-			{ title: "A propos", composed: true, components:[
+			{ title: "Inscriptions", route:true, path: "Registration", composed: false},
+			{ title: "A propos", route:false, composed: true, components:[
 				{ title: "A propos", path: "/#/about"},
 			]},
 		]
