@@ -1,12 +1,19 @@
 <template>
     <div id="conferences" class="hero">
-
+        <Speakers/>
+        <Sessions/>
     </div>
 </template>
 
 <script>
+import Speakers from '../components/Speakers.vue'
+import Sessions from '../components/Sessions.vue'
 export default {
   name: "Conferances",
+  components: {
+      Speakers,
+      Sessions
+  },
 };
 </script>
 
@@ -15,7 +22,7 @@ export default {
 .hero{
     background-image: url("../assets/backgrounds/Event_background_2.jpg");
 
-    height: 100vh;
+    height: fit-content;
     width: 100%;
 
     background-position: center;
