@@ -42,12 +42,11 @@
                                 ></b-form-datepicker>
                             </b-form-group>
 
-                            <b-form-group id="input-group-5" label="Choisissez les conferences auquels vous voullez participer" v-slot="{ ariaDescribedby }" label-for="input-5">
+                            <b-form-group id="input-group-5" label="Choisissez les conferences auquels vous voullez participer" label-for="input-5">
                                 <b-form-checkbox-group
                                     id="input-5"
                                     v-model="form.selectedConfs"
                                     :options="conferences"
-                                    :aria-describedby="ariaDescribedby"
                                     name="flavour-2a"
                                     stacked
                                 ></b-form-checkbox-group>
@@ -61,13 +60,11 @@
                                 ></b-form-select>
                             </b-form-group>
 
-                            <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" v-slot="{ ariaDescribedby }" label-for="input-7">
+                            <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" label-for="input-7">
                                 <b-form-checkbox-group
                                     id="input-7"
                                     v-model="form.tresorHunt"
                                     :options="tresorHunt"
-                                    :aria-describedby="ariaDescribedby"
-
                                     stacked
                                 ></b-form-checkbox-group>
                             </b-form-group>
@@ -78,7 +75,6 @@
                                     id="input-8"
                                     v-model="form.USTHBStudent"
                                     :options="USTHBStudent"
-                                    :aria-describedby="ariaDescribedby"
                                     name="radio-options"
                                     required
                                 ></b-form-radio-group>
