@@ -1,100 +1,110 @@
 <template>
-    <div class="back">
-        <div class="elevated-form">
-            <b-form @submit="onSubmit" @reset="onReset">
-                <b-form-group id="input-group-1" label="Email address:" label-for="input-1">
-                    <b-form-input
-                        id="input-1"
-                        v-model="form.email"
-                        type="email"
-                        placeholder="Enter email"
-                        required
-                    ></b-form-input>
-                </b-form-group>
+    <div>
+        <b-container fluid class="back">
+            <b-row class="elevated-form" align-v="center">
+                <b-col xl="12">
+                    <b-form @submit="onSubmit" @reset="onReset">
 
-                <b-form-group id="input-group-2" label="Nom:" label-for="input-2">
-                    <b-form-input
-                        id="input-2"
-                        v-model="form.lastName"
-                        required
-                    ></b-form-input>
-                </b-form-group>
+                        <div class="to-scroll">
+                            <b-form-group id="input-group-1" label="Email address:" label-for="input-1">
+                                <b-form-input
+                                    id="input-1"
+                                    v-model="form.email"
+                                    type="email"
+                                    placeholder="Enter email"
+                                    required
+                                ></b-form-input>
+                            </b-form-group>
 
-                <b-form-group id="input-group-3" label="Prenom:" label-for="input-3">
-                    <b-form-input
-                        id="input-3"
-                        v-model="form.firstName"
-                        required
-                    ></b-form-input>
-                </b-form-group>
+                            <b-form-group id="input-group-2" label="Nom:" label-for="input-2">
+                                <b-form-input
+                                    id="input-2"
+                                    v-model="form.lastName"
+                                    required
+                                ></b-form-input>
+                            </b-form-group>
 
-                <b-form-group id="input-group-4" label="Date de Naissance:" label-for="input-4">
-                    <b-form-datepicker
-                        id="input-4"
-                        v-model="form.birthDate" :min="min" :max="max"
-                        locale="fr"
-                        class="mb-2"
-                        required
-                    ></b-form-datepicker>
-                </b-form-group>
+                            <b-form-group id="input-group-3" label="Prenom:" label-for="input-3">
+                                <b-form-input
+                                    id="input-3"
+                                    v-model="form.firstName"
+                                    required
+                                ></b-form-input>
+                            </b-form-group>
 
-                <b-form-group id="input-group-5" label="Choisissez les conferences auquels vous voullez participer" v-slot="{ ariaDescribedby }" label-for="input-5">
-                    <b-form-checkbox-group
-                        id="input-5"
-                        v-model="form.selectedConfs"
-                        :options="conferences"
-                        :aria-describedby="ariaDescribedby"
-                        name="flavour-2a"
-                        stacked
-                    ></b-form-checkbox-group>
-                </b-form-group>
+                            <b-form-group id="input-group-4" label="Date de Naissance:" label-for="input-4">
+                                <b-form-datepicker
+                                    id="input-4"
+                                    v-model="form.birthDate" :min="min" :max="max"
+                                    locale="fr"
+                                    class="mb-2"
+                                    required
+                                ></b-form-datepicker>
+                            </b-form-group>
 
-                <b-form-group id="input-group-6" label="Dans quels activitées aimeriez vous participer?" label-for="input-6">
-                    <b-form-select
-                        id="input-6"
-                        v-model="form.activity"
-                        :options="activities"
-                    ></b-form-select>
-                </b-form-group>
+                            <b-form-group id="input-group-5" label="Choisissez les conferences auquels vous voullez participer" v-slot="{ ariaDescribedby }" label-for="input-5">
+                                <b-form-checkbox-group
+                                    id="input-5"
+                                    v-model="form.selectedConfs"
+                                    :options="conferences"
+                                    :aria-describedby="ariaDescribedby"
+                                    name="flavour-2a"
+                                    stacked
+                                ></b-form-checkbox-group>
+                            </b-form-group>
 
-                <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" v-slot="{ ariaDescribedby }" label-for="input-7">
-                    <b-form-checkbox-group
-                        id="input-7"
-                        v-model="form.tresorHunt"
-                        :options="tresorHunt"
-                        :aria-describedby="ariaDescribedby"
+                            <b-form-group id="input-group-6" label="Dans quels activitées aimeriez vous participer?" label-for="input-6">
+                                <b-form-select
+                                    id="input-6"
+                                    v-model="form.activity"
+                                    :options="activities"
+                                ></b-form-select>
+                            </b-form-group>
 
-                        stacked
-                    ></b-form-checkbox-group>
-                </b-form-group>
+                            <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" v-slot="{ ariaDescribedby }" label-for="input-7">
+                                <b-form-checkbox-group
+                                    id="input-7"
+                                    v-model="form.tresorHunt"
+                                    :options="tresorHunt"
+                                    :aria-describedby="ariaDescribedby"
+
+                                    stacked
+                                ></b-form-checkbox-group>
+                            </b-form-group>
 
 
-                <b-form-group id="input-group-8" label="Etes vous un etudiants de l'USTHB" label-for="input-8">
-                    <b-form-radio-group
-                        id="input-8"
-                        v-model="form.USTHBStudent"
-                        :options="USTHBStudent"
-                        :aria-describedby="ariaDescribedby"
-                        name="radio-options"
-                        required
-                    ></b-form-radio-group>
-                </b-form-group>
+                            <b-form-group id="input-group-8" label="Etes vous un etudiants de l'USTHB" label-for="input-8">
+                                <b-form-radio-group
+                                    id="input-8"
+                                    v-model="form.USTHBStudent"
+                                    :options="USTHBStudent"
+                                    :aria-describedby="ariaDescribedby"
+                                    name="radio-options"
+                                    required
+                                ></b-form-radio-group>
+                            </b-form-group>
 
-                <b-form-group id="input-group-9" label="Dans Quel université etes vous inscrit?" label-for="input-9">
-                    <b-form-input
-                        id="input-9"
-                        v-model="form.wichUniversity"
-                        required
-                    ></b-form-input>
-                </b-form-group>
+                            <b-form-group id="input-group-9" label="Dans Quel université etes vous inscrit?" label-for="input-9">
+                                <b-form-input
+                                    id="input-9"
+                                    v-model="form.wichUniversity"
+                                    required
+                                ></b-form-input>
+                            </b-form-group>
+                        </div>
 
-                <b-button type="submit" variant="primary">Submit</b-button>
-                <b-button type="reset" variant="danger">Reset</b-button>
-            </b-form>
-            <b-card class="mt-3" header="Form Data Result">
-                <pre class="m-0">{{ form }}</pre>
-            </b-card>
-        </div>
+                        <b-row align-h="around">
+                            <b-col  >
+                                <b-button type="submit" variant="primary">Inscrivez Vous</b-button>
+                            </b-col>
+                            <b-col >
+                                <b-button type="reset" variant="danger" >Reset</b-button>
+                            </b-col>
+                        </b-row>
+                    </b-form>
+                </b-col>
+            </b-row>
+        </b-container>
     </div>
 </template>
 
@@ -196,14 +206,37 @@ export default {
 
 .elevated-form{
     height: 85vh;
-    width: 90%;
 
     border-radius: 25px;
     background-color: white;
     opacity: 0.8;
 
     padding: 20px;
+}
 
+.to-scroll{
+    height: 70vh;
+    padding: 20px;
+    margin-bottom: 10px;
     overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>
