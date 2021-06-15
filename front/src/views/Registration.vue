@@ -52,7 +52,7 @@
                 <b-form-group id="input-group-6" label="Dans quels activitées aimeriez vous participer?" label-for="input-6">
                     <b-form-select
                         id="input-6"
-                        v-model="form.activities"
+                        v-model="form.activity"
                         :options="activities"
                     ></b-form-select>
                 </b-form-group>
@@ -63,7 +63,7 @@
                         v-model="form.tresorHunt"
                         :options="tresorHunt"
                         :aria-describedby="ariaDescribedby"
-                        name="flavour-2a"
+
                         stacked
                     ></b-form-checkbox-group>
                 </b-form-group>
