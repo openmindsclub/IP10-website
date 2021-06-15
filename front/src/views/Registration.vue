@@ -61,12 +61,11 @@
                             </b-form-group>
 
                             <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" label-for="input-7">
-                                <b-form-checkbox-group
+                                <b-form-radio-group
                                     id="input-7"
                                     v-model="form.tresorHunt"
                                     :options="tresorHunt"
-                                    stacked
-                                ></b-form-checkbox-group>
+                                ></b-form-radio-group>
                             </b-form-group>
 
 
@@ -105,6 +104,8 @@
 </template>
 
 <script>
+import $backend from '../backend'
+
 export default {
   name: "Registration",
   data() {
@@ -146,16 +147,31 @@ export default {
         ],
         tresorHunt: [
           { text: "oui", value: true },
+          { text: "non", value: false },
         ],
         min: minDate,
         max: maxDate,
-        show: true
+        show: true,
+        loading : false,
+        errored: false,
+        error : ""
       }
     },
     methods: {
       onSubmit(event) {
         event.preventDefault()
-        alert(JSON.stringify(this.form))
+        this.loading = true
+
+        console.log(this.form)
+
+        $backend.registration(this.form)
+        .then(responseData => {
+            this.info = responseData
+        }).catch(error => {
+            this.errored = true
+            this.error = error.message
+        })
+        .finally(() => this.loading = false)
       },
       onReset(event) {
         event.preventDefault()
@@ -167,7 +183,7 @@ export default {
         this.form.birthDate = ''
         this.form.activity = null
         this.form.USTHBStudent = null
-        his.form.tresorHunt = null
+        this.form.tresorHunt = null
         this.form.selectedConfs = []
         this.form.wichUniversity = ''
         // Trick to reset/clear native browser form validation state
