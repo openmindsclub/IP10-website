@@ -43,17 +43,18 @@ def create_participant(first_name, last_name, email, birth_day, list_conferences
         email(str): will be stocked in the data base, it's unique so we check if it
                 exist and raise an ValueError exception if it does
         date_of_birth(str): date of birth
-        gender(str): "male", "female" or "other"
-        status(str): one of the following strings "Unemployed", "High schooler",
-                "Undergraduate", "Graduate", "Masters", "Doctorate", "Employed", "Freelance", "Other"
+
         phone_number(str)
         conferences(dict of bools): dict of booleans which contains all 5
                 conferences and panels, true if he registered to one of them,
                 and false elswhere
-        workshops(dict of bools): dict of booleans which contains the 2 disponible
-                workshops, true if he registered to one of them, and false elswhere
-        chasse_au_tresor(bool): true if it participate in the tresor hunt, false if it doesn't, Default:False
-        battle_grap(bool): true if it participate in the battle graphique, false if it doesn't, Default:False
+        activities(str): which activity the participant want to participate between
+                the 2 workshops, and the battle graphic,
+                can take the values "python", "godot", "battle_graphique" or "" otherwise would raise an exeption
+        chasse_au_tresor(bool): true if it participate in the tresor hunt, false if it doesn't
+        is_usthb(bool): true if the participant is from USTHB
+        which_univ(str): wich university the participant belong to (if it's not USTHB)
+                    if is_usthb is true the value of which_univ is ignored
 
     Raises:
         EmailAlreadyExistError if the email already exist in the database.
@@ -64,6 +65,8 @@ def create_participant(first_name, last_name, email, birth_day, list_conferences
 
     if email_exist(email):
         raise EmailAlreadyExistError(email)
+
+    if
 
     post = {
         "first_name": first_name,
