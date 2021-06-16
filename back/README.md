@@ -15,29 +15,22 @@ the endpoint is '/register'
 an example of json files taken for a participant POST request
 ```json
 {
-    "first_name":"first name",
-    "last_name":"name",
+    "first_name": "first name",
+    "last_name": "name",
     "email":"email1@gmail.com",
     "status":"student",
     "date_of_birth":"02/11/1998",
-    "conferences":{
-        "panel1": true,
-        "panel2":true,
-        "conference1": true,
-        "conference2": false,
-        "conference3": false
-    },
-    "workshops":{
-        "python": true,
-        "godot": false
-    },
+    "conferences":[
+        "panel1",
+        "panel2",
+        "conference1",
+        "conference2",
+        "conference3"
+    ],
+    "activites": "battle_graphique",
     "chasse_au_tresor":true,
-    "battle_graphique":false,
-    "team_emails":[
-        "email2@gmail.com",
-        "email3@gmail.com",
-        "email4@gmail.com"
-    ]
+    "isUSTHB" : true,
+    "Whichuniversity" : ""
 }
 ```
 

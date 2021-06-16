@@ -33,7 +33,7 @@ def create_feedback(name, email, message):
     return feedbacks_col.insert_one(post)
 
 
-def create_participant(first_name, last_name, email, status, date_of_birth, conferences, workshops, chasse_au_tresor=False, battle_grap=False, team_emails=[]):
+def create_participant(first_name, last_name, email, birth_day, list_conferences, activities, chasse_au_tresor, is_usthb, which_univ):
 
     """
     function that's insert a participant to the database
@@ -54,8 +54,6 @@ def create_participant(first_name, last_name, email, status, date_of_birth, conf
                 workshops, true if he registered to one of them, and false elswhere
         chasse_au_tresor(bool): true if it participate in the tresor hunt, false if it doesn't, Default:False
         battle_grap(bool): true if it participate in the battle graphique, false if it doesn't, Default:False
-        team_emails(list of str): contains the lists of the teams members in the tresor hunt
-                    is only taken into consideration if chasse_au_tresor=True, Default:[]
 
     Raises:
         EmailAlreadyExistError if the email already exist in the database.
@@ -64,32 +62,22 @@ def create_participant(first_name, last_name, email, status, date_of_birth, conf
         True if the particiapant was added successfully and false elswhere
     """
 
-
     if email_exist(email):
         raise EmailAlreadyExistError(email)
 
     post = {
         "first_name": first_name,
         "last_name": last_name,
-        "date_of_birth": date_of_birth,
+        "birth_day": birth_day,
         "email": email,
-        "status": status,
-        "conferences" : {
-            "panel1": conferences["panel1"],
-            "panel2": conferences["panel2"],
-            "conference1": conferences["conference1"],
-            "conference2": conferences["conference2"],
-            "conference3": conferences["conference3"]
-        },
-        "workshops": {
-            "python":workshops["python"],
-            "godot": workshops["godot"]
-        },
+        "conferences" : list_conferences,
+        "activites": activities,
         "chasse_au_tresor": chasse_au_tresor,
-        "battle_graphique":battle_grap
+        "is_usthb": is_usthb,
+
     }
 
-    if chasse_au_tresor:
-        post["team_emails"] = team_emails
+    if not is_usthb:
+        post["which_univ"] = which_univ
 
     return participant_col.insert_one(post)
