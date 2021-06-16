@@ -1,0 +1,5 @@
+flask
+Flask-PyMongo
+PyMongo
+Flask-Cors
+flask-restful
