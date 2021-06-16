@@ -28,7 +28,9 @@ class participant(Resource):
         try:
             inserted = models.create_participant(request.json['first_name'], request.json['last_name'], request.json['email'], request.json['date_of_birth'], request.json['conferences'], request.json['activites'], request.json['chasse_au_tresor'], request.json['isUSTHB'], request.json['Whichuniversity'])
         except EmailAlreadyExistError as e:
-            return jsonify({"error": "The email is already being used"})
+            return jsonify({"error": str(e)})
+        except InvalidActivityError as e:
+            return jsonify({"error": str(e)})
 
         if (inserted):
             return jsonify({"success":"Paritcipant added successfully"})

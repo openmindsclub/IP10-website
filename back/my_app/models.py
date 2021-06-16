@@ -58,15 +58,13 @@ def create_participant(first_name, last_name, email, birth_day, list_conferences
 
     Raises:
         EmailAlreadyExistError if the email already exist in the database.
+        InvalidActivityError if the email already exist in the database.
 
     Return:
         True if the particiapant was added successfully and false elswhere
     """
 
-    if email_exist(email):
-        raise EmailAlreadyExistError(email)
-
-    if
+    _data_verification(email, list_conferences, activities, chasse_au_tresor, is_usthb, which_univ)
 
     post = {
         "first_name": first_name,
@@ -77,10 +75,18 @@ def create_participant(first_name, last_name, email, birth_day, list_conferences
         "activites": activities,
         "chasse_au_tresor": chasse_au_tresor,
         "is_usthb": is_usthb,
-
     }
 
     if not is_usthb:
         post["which_univ"] = which_univ
 
     return participant_col.insert_one(post)
+
+
+def _data_verification(email, list_conferences, activities, chasse_au_tresor, is_usthb, which_univ):
+
+    if email_exist(email):
+        raise EmailAlreadyExistError(email)
+
+    if activities not in ["", "python", "godot", "battle_graphique"]:
+        raise InvalidActivityError(activities)
