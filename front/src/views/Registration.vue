@@ -19,7 +19,7 @@
                             <b-form-group id="input-group-2" label="Nom:" label-for="input-2">
                                 <b-form-input
                                     id="input-2"
-                                    v-model="form.lastName"
+                                    v-model="form.last_name"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -27,7 +27,7 @@
                             <b-form-group id="input-group-3" label="Prenom:" label-for="input-3">
                                 <b-form-input
                                     id="input-3"
-                                    v-model="form.firstName"
+                                    v-model="form.first_name"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -35,7 +35,7 @@
                             <b-form-group id="input-group-4" label="Date de Naissance:" label-for="input-4">
                                 <b-form-datepicker
                                     id="input-4"
-                                    v-model="form.birthDate" :min="min" :max="max"
+                                    v-model="form.birth_date" :min="min" :max="max"
                                     locale="fr"
                                     class="mb-2"
                                     required
@@ -45,7 +45,7 @@
                             <b-form-group id="input-group-5" label="Choisissez les conferences auquels vous voullez participer" label-for="input-5">
                                 <b-form-checkbox-group
                                     id="input-5"
-                                    v-model="form.selectedConfs"
+                                    v-model="form.conferences"
                                     :options="conferences"
                                     name="flavour-2a"
                                     stacked
@@ -55,7 +55,7 @@
                             <b-form-group id="input-group-6" label="Dans quels activitées aimeriez vous participer?" label-for="input-6">
                                 <b-form-select
                                     id="input-6"
-                                    v-model="form.activity"
+                                    v-model="form.activities"
                                     :options="activities"
                                 ></b-form-select>
                             </b-form-group>
@@ -63,7 +63,7 @@
                             <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" label-for="input-7">
                                 <b-form-radio-group
                                     id="input-7"
-                                    v-model="form.tresorHunt"
+                                    v-model="form.tresor_hunt"
                                     :options="tresorHunt"
                                 ></b-form-radio-group>
                             </b-form-group>
@@ -72,7 +72,7 @@
                             <b-form-group id="input-group-8" label="Etes vous un etudiants de l'USTHB" label-for="input-8">
                                 <b-form-radio-group
                                     id="input-8"
-                                    v-model="form.USTHBStudent"
+                                    v-model="form.isUSTHB"
                                     :options="USTHBStudent"
                                     name="radio-options"
                                     required
@@ -82,7 +82,7 @@
                             <b-form-group id="input-group-9" label="Dans Quel université etes vous inscrit?" label-for="input-9">
                                 <b-form-input
                                     id="input-9"
-                                    v-model="form.wichUniversity"
+                                    v-model="form.which_university"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -114,23 +114,23 @@ export default {
       return {
         form: {
           email: '',
-          firstName: '',
-          lastName: '',
-          birthDate: '',
-          selectedConfs: [],
-          activity: null,
-          tresorHunt: null,
-          USTHBStudent: null,
-          wichUniversity: ''
+          first_name: '',
+          last_name: '',
+          birth_date: '',
+          conferences: [],
+          activities: null,
+          tresor_hunt: null,
+          isUSTHB: null,
+          which_university: ''
         },
         activities: [
           { value: null, text: 'Aucune' },
-          { value: 'battleGraphique', text: 'La Battle Graphique' },
+          { value: 'battle_graphique', text: 'La Battle Graphique' },
           {
             label: 'Workshops',
             options: [
-              { value: 'Python', text: 'Machine Learning avec Python' },
-              { value: 'Godot', text: 'Godot' }
+              { value: 'python', text: 'Machine Learning avec Python' },
+              { value: 'godot', text: 'Godot' }
             ]
           }
         ],
@@ -178,14 +178,14 @@ export default {
         // Reset our form values
 
         this.form.email = ''
-        this.form.firstName = ''
-        this.form.lastName = ''
-        this.form.birthDate = ''
-        this.form.activity = null
-        this.form.USTHBStudent = null
-        this.form.tresorHunt = null
-        this.form.selectedConfs = []
-        this.form.wichUniversity = ''
+        this.form.first_name = ''
+        this.form.last_name = ''
+        this.form.birth_date = ''
+        this.form.activities = null
+        this.form.isUSTHB = null
+        this.form.tresor_hunt = null
+        this.form.conferences = []
+        this.form.which_university = ''
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {

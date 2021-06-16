@@ -66,19 +66,21 @@ def create_participant(first_name, last_name, email, birth_day, list_conferences
 
     _data_verification(email, list_conferences, activities, chasse_au_tresor, is_usthb, which_univ)
 
+    list_conferences = [conf.lower() for conf in list_conferences]
+
     post = {
-        "first_name": first_name,
-        "last_name": last_name,
+        "first_name": first_name.lower(),
+        "last_name": last_name.lower(),
         "birth_day": birth_day,
-        "email": email,
+        "email": email.lower(),
         "conferences" : list_conferences,
-        "activites": activities,
+        "activites": activities.lower(),
         "chasse_au_tresor": chasse_au_tresor,
         "is_usthb": is_usthb,
     }
 
     if not is_usthb:
-        post["which_univ"] = which_univ
+        post["which_univ"] = which_univ.lower()
 
     return participant_col.insert_one(post)
 
@@ -88,5 +90,5 @@ def _data_verification(email, list_conferences, activities, chasse_au_tresor, is
     if email_exist(email):
         raise EmailAlreadyExistError(email)
 
-    if activities not in ["", "python", "godot", "battle_graphique"]:
+    if activities.lower() not in ["", "python", "godot", "battle_graphique"]:
         raise InvalidActivityError(activities)

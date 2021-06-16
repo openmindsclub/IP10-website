@@ -18,7 +18,6 @@ an example of json files taken for a participant POST request
     "first_name": "first name",
     "last_name": "name",
     "email":"email1@gmail.com",
-    "status":"student",
     "date_of_birth":"02/11/1998",
     "conferences":[
         "panel1",
@@ -28,7 +27,7 @@ an example of json files taken for a participant POST request
         "conference3"
     ],
     "activites": "battle_graphique",
-    "chasse_au_tresor":true,
+    "tresor_hunt":true,
     "isUSTHB" : true,
     "Whichuniversity" : ""
 }

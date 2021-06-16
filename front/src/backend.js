@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://127.0.0.1:5000/api';
+const API_URL = 'http://127.0.0.1:5000/';
 
 let $axios = axios.create({
   baseURL: API_URL,
@@ -9,13 +9,13 @@ let $axios = axios.create({
 
 export default {
 
-  registration() {
-    return $axios.post(`register`)
+  registration(data) {
+    return $axios.post(`register`, data)
       .then(response => response.data)
   },
 
-  feedback () {
-    return $axios.post(`feedback`)
+  feedback (data) {
+    return $axios.post(`feedback`, data)
       .then(response => response.data)
   },
 }
