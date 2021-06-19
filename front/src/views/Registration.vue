@@ -101,8 +101,14 @@
             </b-row>
         </b-container>
 
-        <b-modal v-model="showModal" id="modal-center" centered :title="modalHeading">
+        <b-modal v-model="showModal" id="modal-success" centered :title="modalHeading">
             <p class="my-4">{{modalText}}</p>
+            <template v-if="sucess" #modal-footer="{ok}">
+                <b-button @click="ok()">OK</b-button>
+            </template>
+            <template v-else  #modal-footer="{ok}">
+                <b-button @click="ok()">OK</b-button>
+            </template>
         </b-modal>
     </div>
 </template>
@@ -162,6 +168,7 @@ export default {
 
         // modal
         showModal: false,
+        sucess: false,
         modalHeading: "",
         modalText: "",
         modalTheme: "",
@@ -170,6 +177,7 @@ export default {
     methods: {
       onSubmit(event) {
         event.preventDefault()
+        this.sucess = false
         this.loading = true
 
         $backend.registration(this.form)
@@ -187,6 +195,7 @@ export default {
                 this.modalText = "Felicitation vous avez reussit à vous inscrire à l'install party 10"
                 this.modalTheme = ""
                 this.showModal = true
+                this.sucess = true
             } else if ('error' in this.info) {
                 this.modalHeading =  "Un probleme est survenue au cours de l'inscription"
                 this.modalText = this.info["error"]
