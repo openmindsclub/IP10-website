@@ -1,5 +1,6 @@
 <template>
     <div>
+        <NavBar/>
         <b-container fluid class="back">
             <b-row class="elevated-form" align-v="center">
                 <b-col xl="12">
@@ -115,9 +116,13 @@
 
 <script>
 import $backend from '../backend'
+import NavBar from '../components/NavBar'
 
 export default {
   name: "Registration",
+  component: {
+      NavBar,
+  },
   data() {
       const minDate = new Date(1970, 1, 1);
       const maxDate = new Date(2004, 11, 31);

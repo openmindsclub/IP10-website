@@ -1,5 +1,6 @@
 <template>
 <div>
+    <NavBar/>
     <div id="welcome" class="hero-acceuil">
         <div class="space"></div>
 
@@ -36,9 +37,12 @@
 </template>
 
 <script>
+import NavBar from '../components/NavBar'
 export default {
   name: "Acceuil",
-  component: {},
+  component: {
+      NavBar,
+  },
   data: () => ({
       pics: [
           { title: "facebook", path: "/#/acceuil"},

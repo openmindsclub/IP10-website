@@ -32,8 +32,8 @@ export default {
 	data: () => ({
 		sidebar: false,
 		items: [
-			{ title: "Acceuil", route:false, path: "#welcome", composed: false},
-			{ title: "Event", route:false, path: "#event", composed: false},
+			{ title: "Acceuil", route:true, path: "/", composed: false},
+			{ title: "Home", route:true, path: "Home", composed: false},
 			{ title: "Activities", route:false, composed: true, components:[
 				{ title: "Conferances", path: "#conferences"},
 				{ title: "Workshops", path: "#workshops"},
