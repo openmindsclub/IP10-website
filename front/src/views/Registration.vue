@@ -104,10 +104,10 @@
         <b-modal v-model="showModal" id="modal-success" centered :title="modalHeading">
             <p class="my-4">{{modalText}}</p>
             <template v-if="sucess" #modal-footer="{ok}">
-                <b-button @click="ok()">OK</b-button>
+                <b-button @click="ok()" size="sm" variant="success">Take me Home</b-button>
             </template>
             <template v-else  #modal-footer="{ok}">
-                <b-button @click="ok()">OK</b-button>
+                <b-button @click="ok()" size="sm">OK</b-button>
             </template>
         </b-modal>
     </div>
@@ -227,7 +227,11 @@ export default {
       },
       toggleModal() {
           this.showModal = false
+      },
+      Navigate() {
+          this.$router.push({path: '/'})
       }
+
     },
     computed: {
         showWichUniversity(){
@@ -237,7 +241,14 @@ export default {
                 return true
             }
         }
-    }
+    },
+    mounted() {
+    this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
+      if (this.sucess){
+          this.Navigate()
+      }
+    })
+  }
 };
 </script>
 
