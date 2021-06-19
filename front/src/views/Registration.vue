@@ -79,7 +79,7 @@
                                 ></b-form-radio-group>
                             </b-form-group>
 
-                            <b-form-group id="input-group-9" label="Dans Quel université etes vous inscrit?" label-for="input-9">
+                            <b-form-group v-if="showWichUniversity" id="input-group-9" label="Dans Quel université etes vous inscrit?" label-for="input-9">
                                 <b-form-input
                                     id="input-9"
                                     v-model="form.which_university"
@@ -100,6 +100,10 @@
                 </b-col>
             </b-row>
         </b-container>
+
+        <b-modal v-model="showModal" id="modal-center" centered :title="modalHeading">
+            <p class="my-4">{{modalText}}</p>
+        </b-modal>
     </div>
 </template>
 
@@ -154,15 +158,19 @@ export default {
         show: true,
         loading : false,
         errored: false,
-        error : ""
+        error : "",
+
+        // modal
+        showModal: false,
+        modalHeading: "",
+        modalText: "",
+        modalTheme: "",
       }
     },
     methods: {
       onSubmit(event) {
         event.preventDefault()
         this.loading = true
-
-        console.log(this.form)
 
         $backend.registration(this.form)
         .then(responseData => {
@@ -171,7 +179,23 @@ export default {
             this.errored = true
             this.error = error.message
         })
-        .finally(() => this.loading = false)
+        .finally(() =>{
+            this.loading = false
+            console.log(this.info)
+            if ('success' in this.info){
+                this.modalHeading =  "Inscription reussite"
+                this.modalText = "Felicitation vous avez reussit à vous inscrire à l'install party 10"
+                this.modalTheme = ""
+                this.showModal = true
+            } else if ('error' in this.info) {
+                this.modalHeading =  "Un probleme est survenue au cours de l'inscription"
+                this.modalText = this.info["error"]
+                this.modalTheme = ""
+                this.showModal = true
+            } else {
+
+            }
+        })
       },
       onReset(event) {
         event.preventDefault()
@@ -191,7 +215,19 @@ export default {
         this.$nextTick(() => {
           this.show = true
         })
+      },
+      toggleModal() {
+          this.showModal = false
       }
+    },
+    computed: {
+        showWichUniversity(){
+            if (this.form.isUSTHB == null || this.form.isUSTHB){
+                return false
+            } else {
+                return true
+            }
+        }
     }
 };
 </script>
