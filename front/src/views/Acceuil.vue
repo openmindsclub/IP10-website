@@ -28,20 +28,23 @@
                         <li v-for="social_media in social_medias" :key="social_media.title">
                             <a :class="social_media.title" :href="social_media.url" target="_blank"><i :class="social_media.class_image"></i></a>
                         </li>
-                </ul>
+                    </ul>
 
             </div>
         </div>
+        <ArrowDownWelcome title="En Savoir plus" color="gray"/>
     </div>
 </div>
 </template>
 
 <script>
 import NavBar from '../components/NavBar'
+import ArrowDownWelcome from '../components/ArrowDownWelcome'
 export default {
   name: "Acceuil",
-  component: {
+  components: {
       NavBar,
+      ArrowDownWelcome,
   },
   data: () => ({
       pics: [

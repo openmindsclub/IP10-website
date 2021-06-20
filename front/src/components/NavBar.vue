@@ -35,10 +35,10 @@ export default {
 			{ title: "Acceuil", route:true, path: "/", composed: false},
 			{ title: "Home", route:true, path: "Home", composed: false},
 			{ title: "Activities", route:false, composed: true, components:[
-				{ title: "Conferances", path: "#conferences"},
-				{ title: "Workshops", path: "#workshops"},
-				{ title: "Other Activities", path: "#activities"},
-				{ title: "Stands", path: "#stands"}
+				{ title: "Conferances", path: "Home#conferences"},
+				{ title: "Workshops", path: "Home#workshops"},
+				{ title: "Other Activities", path: "Home#activities"},
+				{ title: "Stands", path: "Home#stands"}
 			]},
 			{ title: "Inscriptions", route:true, path: "Registration", composed: false},
 			{ title: "A propos", route:false, composed: true, components:[
