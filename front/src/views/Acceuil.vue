@@ -13,7 +13,8 @@
                     <p>
                         Notre evenement phare est enfin là, au programme des conferences, panels, workshops et plein d'activités, vous pouvez en apprendre plus juste en bas!
                     </p>
-                    <img @click="Registration()" src="../assets/welcome_screen/participer_button.png" class="participer-button"/>
+                    <router-link to="Registration"><img src="../assets/welcome_screen/participer_button.png" class="participer-button"/></router-link>
+
                 </div>
             </div>
             <div class="right-side">
@@ -67,7 +68,7 @@ export default {
           return  require('../assets/Social_Media_Logos/' + pic + ".png");
       },
       Registration(){
-          console.log("clicked")
+
       }
   }
 };
