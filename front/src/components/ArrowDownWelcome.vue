@@ -1,7 +1,7 @@
 <template>
     <div class="footer-screen">
         <h6 class="gray-color">{{ title }}</h6>
-        <a href="#" class="gray-color"><i class="fas fa-angle-down"></i></a>
+        <router-link to="Home" class="gray-color"><i class="fas fa-angle-down"></i></router-link>
     </div>
 </template>
 
