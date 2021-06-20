@@ -1,7 +1,7 @@
 <template>
     <div class="footer-screen">
-        <h6 class="gray-color">{{ title }}</h6>
-        <router-link to="Home" class="gray-color"><i class="fas fa-angle-down"></i></router-link>
+        <h6>{{ title }}</h6>
+        <router-link to="Home"><i class="fas fa-angle-down"></i></router-link>
     </div>
 </template>
 
@@ -29,6 +29,7 @@ export default {
 
 h6{
     font-size: 1em;
+    color: #4B535C;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -37,17 +38,27 @@ h6{
     left: 0.5em;
 }
 
-.gray-color {
-    color: #4B535C;
-}
-
 a{
     line-height:34px;
+    color: #4B535C;
     height:34px;
     width:34px;
     font-size:4.3em;
     margin: 0;
     padding: 0;
+}
+
+.footer-screen:hover a, .footer-screen:hover h6{
+    color: #69B370;
+    animation-name: wooble;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wooble {
+    0%{transform: translateY(0px);}
+    60%{transform: translateY(-30px);}
+    100%{transform: translateY(0px);}
 }
 
 @media (max-width: 600px){
