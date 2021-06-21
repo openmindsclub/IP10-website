@@ -27,29 +27,23 @@
             </b-container>
         </div>
         <div class="mobile">
-            <b-carousel
-              id="carousel-1"
-              v-model="slide"
-              :interval="4000"
-              controls
-              indicators
-              style="text-shadow: 1px 1px 2px #333;"
-              @sliding-start="onSlideStart"
-              @sliding-end="onSlideEnd"
-            >
-                <b-carousel-slide v-for="conf in conferenceAndPanels" :key="conf.tittle" img-blank>
+            <carousel :autoplay="true" :autoplayHoverPause="true" :perPage="1" :loop="true">
+                <slide v-for="conf in conferenceAndPanels" :key="conf.tittle" >
                     <Paragraph :title="conf.title" :content="conf.content" time=true :begin="conf.timeBegin" :end="conf.timeEnd"/>
-                </b-carousel-slide>
-            </b-carousel>
+                </slide>
+            </carousel>
         </div>
     </div>
 </template>
 
 <script>
 import Paragraph from '../components/Paragraph.vue';
+import { Carousel, Slide } from 'vue-carousel';
 export default {
   name: "Sessions",
   components: {
+      Carousel,
+      Slide,
       Paragraph
   },
   data: () => ({
@@ -132,7 +126,9 @@ h2{
     h2{
         font-size: 50px;
     }
+}
 
+@media(max-width: 992px){
     .mobile{
         display: block;
     }
