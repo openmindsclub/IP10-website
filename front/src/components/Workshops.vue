@@ -22,7 +22,7 @@
                 <b-col class="" md="3" sm="12">
                     <div class="space"></div>
                     <div class="photo-container">
-                        <b-img center :src="require('../assets/photos/ilies_photo.png')" fluid alt="jimmy" class="photo"></b-img>
+                        <b-img center :src="require(`../assets/photos/${imageDisplayed.image}`)" fluid alt="" class="photo"></b-img>
                     </div>
                 </b-col>
                 <b-col class="workshop2" md="4" sm="12">
@@ -74,6 +74,17 @@ export default {
               image: 'python.svg',
           },
       ],
+      actualImage : 0,
+      formateurIMG : [
+          {
+              image: "ilies_photo.png",
+              alt: "Ilies CHIBANE"
+          },
+          {
+              image: "mohamed_amine_photo.png",
+              alt: "SOUIDI Mohammed Amine"
+          }
+      ]
   }),
   methods: {
       getImgUrl(logo_path){
@@ -81,11 +92,25 @@ export default {
       },
       formateur_name(formateur){
           return "Formateur: " + formateur
+      },
+      change_image(){
+          if (this.actualImage == this.formateurIMG.length - 1){
+              this.actualImage = 0
+          } else {
+              this.actualImage++
+          }
       }
   },
   computed: {
-
-  }
+      imageDisplayed() {
+          return this.formateurIMG[this.actualImage]
+      }
+  },
+  mounted: function () {
+      window.setInterval(() => {
+          this.change_image()
+    }, 3000)
+}
 };
 </script>
 
