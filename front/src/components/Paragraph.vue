@@ -3,6 +3,7 @@
         <h4 :class="text_color">{{ title }}</h4>
         <img class="large-line" :class="show_white_line" src="../assets/large_white_line.png"/>
         <img class="large-line" :class="show_gray_line" src="../assets/large_gray_line.png"/>
+        <h6 v-if="time" class="time" :class="text_color">{{begin}} - {{end}}</h6>
         <p :class="text_color">{{ content }}</p>
     </div>
 </template>
@@ -10,7 +11,7 @@
 <script>
 export default {
   name: "Paragraph",
-  props: ['title', 'content', 'color'],
+  props: ['title', 'content', 'color', 'time', 'begin', 'end'],
   computed: {
       text_color(){
           if (this.color === 'gray'){
@@ -51,6 +52,13 @@ h4{
 
 p{
     font-size: 17px;
+}
+
+.time{
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: italic;
 }
 
 .white-color {

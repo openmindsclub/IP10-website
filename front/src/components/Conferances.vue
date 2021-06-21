@@ -1,7 +1,7 @@
 <template>
     <div id="conferences" class="hero">
-        <Speakers/>
         <Sessions/>
+        <Speakers/>
     </div>
 </template>
 
