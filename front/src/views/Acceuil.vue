@@ -61,15 +61,30 @@ export default {
           { title: "linkedin", url: "https://www.linkedin.com/company/open-minds-club", class_image:'fab fa-linkedin'},
           { title: "instagram", url: "https://www.instagram.com/openmindsclub/", class_image:'fab fa-instagram'},
           { title: "youtube", url: "https://www.youtube.com/channel/UCTS5jQGSPHuuibdqLUqFAqw", class_image:'fab fa-youtube'},
-      ]
+      ],
+      amount_scrolled: 0
   }),
   methods: {
-      getImgUrl(pic){
-          return  require('../assets/Social_Media_Logos/' + pic + ".png");
-      },
-      Registration(){
+    getImgUrl(pic){
+        return  require('../assets/Social_Media_Logos/' + pic + ".png");
+    },
+    switchHome(){
 
-      }
+    },
+    handleWheel(event) {
+        if(event.deltaY > 0){
+            this.$router.push({ name: 'Home'})
+        }
+    }
+  },
+
+  mounted() {
+      this.$el.addEventListener('wheel', this.handleWheel)
+  },
+
+  destroyed() {
+      this.$el.removeEventListener('wheel', this.handleWheel)
+
   }
 };
 </script>
