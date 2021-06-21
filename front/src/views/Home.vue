@@ -6,6 +6,7 @@
     <Workshops/>
     <Activities/>
     <Stands/>
+    <about/>
     <Footer/>
   </div>
 </template>
@@ -18,6 +19,7 @@ import Conferances from '../components/Conferances'
 import Workshops from '../components/Workshops'
 import Activities from '../components/Activities'
 import Stands from '../components/Stands'
+import About from '../components/About'
 
 export default {
   name: 'Home',
@@ -28,6 +30,7 @@ export default {
     Workshops,
     Activities,
     Stands,
+    About,
     Footer
   }
 }
