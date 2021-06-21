@@ -173,6 +173,14 @@ h3{
     height: 15%;
 }
 
+@media(max-width: 1500px){
+
+    .hero {
+        height: fit-content;
+        background-repeat: repeat;
+    }
+}
+
 @media(max-width: 1350px){
 
     h2{

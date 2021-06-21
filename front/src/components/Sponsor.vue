@@ -15,13 +15,13 @@
 
     <b-container fluid class="page">
         <b-row class="row-class" align-v="center" align-h="around">
-            <b-col col="3" md="2" xl="1">
+            <b-col cols="3" md="2" xl="1">
                 <b-img center :src="require(`../assets/go.png`)" fluid alt="global opurtunities logo"></b-img>
             </b-col>
-            <b-col col="3" md="2" xl="1">
+            <b-col cols="3" md="2" xl="1">
                 <b-img center :src="require(`../assets/usthb_logo.png`)" fluid alt="usthb logo"></b-img>
             </b-col>
-            <b-col col="3" md="2" xl="1" >
+            <b-col cols="3" md="2" xl="1" >
                 <b-img center :src="require(`../assets/sdacs.png`)" fluid alt="sdacs logo"></b-img>
             </b-col>
         </b-row>

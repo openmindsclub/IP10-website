@@ -95,6 +95,14 @@ h3{
     width: 20%;
 }
 
+@media(max-width: 1500px){
+
+    .hero {
+        height: fit-content;
+        background-repeat: repeat;
+    }
+}
+
 @media(max-width: 765px){
 
     .hero {
