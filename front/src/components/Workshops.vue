@@ -4,7 +4,7 @@
             <h2>Workshops</h2>
         </div>
         <b-container fluid class="page">
-            <b-row>
+            <b-row class="row-class">
                 <b-col class="workshop1" md="4" sm="12">
                     <h3>{{workshops[0].title}}</h3>
                     <div class="formation-section">
@@ -226,6 +226,10 @@ h3{
 
     .space{
         display: none;
+    }
+
+    .row-class{
+        width: 100%;
     }
 }
 

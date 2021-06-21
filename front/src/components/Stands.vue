@@ -1,8 +1,8 @@
 <template>
     <div id="stands" class="hero">
         <b-container fluid class="page">
-            <b-row>
-                <b-col class="stands" md="5" sm="12">
+            <b-row class="row-class">
+                <b-col class="club-stands" md="5" sm="12">
                     <h3>Stands</h3>
                     <div class="stand" v-for="stand in stands" :key="stand.stand_title">
                         <Paragraph :title="stand.stand_title" :content="stand.content"/>
@@ -77,6 +77,8 @@ export default {
     padding-right: 3%;
 }
 
+
+
 h3{
     color: white;
     font-size: 50px;
@@ -102,6 +104,10 @@ h3{
 
     .logos{
         padding-bottom:8%;
+    }
+
+    .row-class{
+        width: 100%;
     }
 }
 

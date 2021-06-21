@@ -2,7 +2,7 @@
     <div id="event" class="hero">
         <div class="space"></div>
         <b-container fluid class="page">
-            <b-row align-v="center" align-h="center">
+            <b-row class="row-class" align-v="center" align-h="center">
                 <b-col class="leftside" md="6" sm="12">
                     <h2>Tout sur L'Install Party</h2>
                     <img class="large_white_line"  src="../assets/large_white_line.png"/>
@@ -16,7 +16,7 @@
                 </b-col>
                 <b-col class="rightside" md="6" sm="12">
                     <div class="">
-                        <b-row align-h="center">
+                        <b-row class="margin-row" align-h="center">
                             <b-col md="3">
                                 <img class="clubLogo" src="../assets/omc_logo_white.png"/>
                             </b-col>
@@ -68,6 +68,11 @@ export default {
 
 .page{
     padding-left: 3%;
+}
+
+.margin-row{
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .leftside{
@@ -147,6 +152,10 @@ export default {
         width:50%;
         margin-top: 10%;
         margin-bottom: 10%;
+    }
+
+    .row-class{
+        width: 100%;
     }
 }
 
