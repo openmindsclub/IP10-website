@@ -1,5 +1,5 @@
 <template>
-  <div id="activities" class="about">
+  <div id="about" class="about">
     <h2>About US</h2>
     <img class="clubLogo" src="../assets/omc_logo_white.png"/>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus, sint enim optio et unde esse doloremque labore, repellendus quod itaque similique fuga odio ad, odit aliquid culpa saepe ab.</p>
