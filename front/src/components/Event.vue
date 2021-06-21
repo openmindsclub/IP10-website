@@ -68,7 +68,6 @@ export default {
 
 .page{
     padding-left: 3%;
-    padding-right: 3%;
 }
 
 .leftside{
