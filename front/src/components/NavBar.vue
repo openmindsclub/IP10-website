@@ -65,12 +65,12 @@ header {
 nav {
     position: fixed;
     width: 100%;
-    line-height: 60px;
+    line-height: 30px;
     z-index: 99999999;
 }
 
 nav ul {
-    line-height: 45px;
+    line-height: 35px;
     list-style: none;
     background: rgba(0, 0, 0, 0);
     overflow: hidden;
@@ -82,7 +82,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    padding: 10px 40px;;
+    padding: 10px 30px;
 }
 
 nav ul li a {
@@ -122,6 +122,7 @@ nav ul li a:hover{
   display: none;
   color: #F2F5FE;
   position: fixed;
+  background: #F2F5FE;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px;
   z-index: 99999;
