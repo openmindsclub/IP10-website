@@ -22,7 +22,7 @@
                 <b-col class="" md="3" sm="12">
                     <div class="space"></div>
                     <div class="photo-container">
-                        <b-img center :src="require(`../assets/photos/${imageDisplayed.image}`)" fluid alt="" class="photo"></b-img>
+                        <b-img center :src="require(`../assets/photos/${imageDisplayed.image}`)" fluid :alt="imageDisplayed.alt" :title="imageDisplayed.alt" class="photo"></b-img>
                     </div>
                 </b-col>
                 <b-col class="workshop2" md="4" sm="12">
@@ -109,7 +109,7 @@ export default {
   mounted: function () {
       window.setInterval(() => {
           this.change_image()
-    }, 3000)
+    }, 6000)
 }
 };
 </script>
