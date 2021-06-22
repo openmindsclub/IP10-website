@@ -48,11 +48,14 @@ a{
     padding: 0;
 }
 
+.footer-screen{
+    animation-name: wooble;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
 .footer-screen:hover a, .footer-screen:hover h6{
     color: #69B370;
-    animation-name: wooble;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
 }
 
 @keyframes wooble {
