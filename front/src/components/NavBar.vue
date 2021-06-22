@@ -4,11 +4,11 @@
 		<div class="logo-box">
 			<router-link :to="items[0].path"><img class="logo"  src="../assets/logoIP10.png"/></router-link>
 		</div>
-    	<div class="menu-icon">
+    	<div class="menu-icon" :class="[menuTheme, {showing: sidebar}]">
         	<i class="fa fa-bars fa-2x" @click="toogleSlideBar()"></i>
         </div>
         <div class="menu">
-        	<ul v-bind:class="{showing: sidebar}" :class="backgroundTheme">
+        	<ul class="ul-principal" v-bind:class="[backgroundTheme, {showing: sidebar}]">
 				<li v-for="item in items" :key="item.title">
 					<router-link v-if= "item.route" :to="item.path">{{ item.title }}</router-link>
 					<div v-else>
@@ -17,9 +17,11 @@
 							<button class="dropbtn">{{item.title}}
 	      						<i class="fa fa-caret-down"></i>
 	    					</button>
-	  						<div class="dropdown-content">
-								<a  v-for="subItem in item.components" :key="subItem.title" :href="subItem.path">{{ subItem.title }}</a>
-	  						</div>
+	  						<ul class="dropdown-content">
+								<li v-for="subItem in item.components" :key="subItem.title">
+									<a :href="subItem.path">{{ subItem.title }}</a>
+								</li>
+	  						</ul>
 						</div>
 					</div>
 				</li>
@@ -62,6 +64,15 @@ export default {
 			} else if (this.route == "registration") {
 				return "registration-background"
 			}
+		},
+		menuTheme() {
+			if (this.route == "welcome"){
+				return "welcome-menu"
+			} else if (this.route == "home") {
+				return "home-menu"
+			} else if (this.route == "registration") {
+				return "registration-menu"
+			}
 		}
 	}
 };
@@ -90,23 +101,23 @@ nav {
 	margin-top: 13px;
 }
 
-nav ul {
+.ul-principal {
     line-height: 35px;
     list-style: none;
     overflow: hidden;
     text-align: right;
 }
 
-nav ul li {
+.ul-principal li {
     display: inline-block;
     padding: 10px 30px;
 }
 
-nav ul li a {
+.ul-principal li a {
     font-size: 20px;
 }
 
-nav ul li .dropbtn {
+.dropbtn {
     color: #4B535C;
 	background: rgba(0, 0, 0, 0);
     font-size: 20px;
@@ -130,10 +141,14 @@ nav ul li a:hover{
   z-index: 99999;
 }
 
+
+.dropdown-content li {
+	display: block;
+    text-align: left;
+}
+
 /* Links inside the dropdown */
 .dropdown-content a {
-  display: block;
-  text-align: left;
   padding-top: 10px;
 }
 
@@ -142,7 +157,6 @@ nav ul li a:hover{
 	display: block;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropbtn {
 	color: #E1CF4B;
 }
@@ -150,50 +164,11 @@ nav ul li a:hover{
 .menu-icon {
     line-height: 45px;
     width: 100%;
-    background: none;
     box-sizing: border-box;
     padding: 10px 30px;
     cursor: pointer;
     color: #fff;
     display: none;
-}
-
-@media(max-width: 725px) {
-
-	.logo{
-		position: absolute;
-		right: 0px;
-		margin-left: 0px;
-		margin-right: 15px;
-	}
-
-    nav ul {
-          max-height: 0px;
-          background: #000;
-    }
-
-    .showing {
-          max-height: 34em;
-    }
-
-    nav ul li {
-          box-sizing: border-box;
-          width: 100%;
-          padding: 24px;
-          text-align: center;
-    }
-    nav ul li a {
-        color: #fff;
-        font-size: 18px;
-    }
-    nav ul li a:hover{
-        color: rgb(231, 22, 57);
-    }
-
-    .menu-icon {
-          display: block;
-    }
-
 }
 
 /* welcome screen */
@@ -214,6 +189,9 @@ nav ul li a:hover{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+.welcome-menu {
+    background: #F2F5FE;
+}
 
 /* home screen */
 .home-background{
@@ -232,6 +210,9 @@ nav ul li a:hover{
   background: #41494C;
 }
 
+.home-menu {
+    background: #41494C;
+}
 
 /* registration screen */
 .registration-background{
@@ -250,5 +231,86 @@ nav ul li a:hover{
   background: #41494C;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
+
+.registration-menu {
+    background: none;
+}
+
+@media(max-width: 725px) {
+
+	.logo{
+		position: absolute;
+		right: 0px;
+		margin-left: 0px;
+		margin-right: 15px;
+	}
+
+    .ul-principal {
+    	max-height: 0px;
+    }
+
+    .showing {
+        max-height: fit-content;
+    }
+
+    .ul-principal li {
+        box-sizing: border-box;
+        width: 100%;
+        padding-top: 15px;
+		padding-bottom: 15px;
+		display: flex;
+
+    }
+
+    .ul-principal li a {
+        font-size: 20px;
+    }
+
+    li a:hover{
+        color: #E1CF4B;
+    }
+
+    .menu-icon {
+          display: block;
+    }
+
+	.dropdown-content{
+	  	padding: 0px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	}
+
+	.dropdown-content a {
+	  padding-top: 4px;
+	  font-size: 12px;
+	}
+
+	.dropbtn {
+	    padding: 0px;
+	}
+
+	.registration-background .dropdown-content {
+	  box-shadow: none;
+	}
+
+	.welcome-background {
+        background: #F2F5FE;
+		box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
+    }
+
+	.home-background {
+        background: #41494C;
+    }
+
+	.registration-background {
+        background: #41494C;
+    }
+
+	.registration-menu.showing {
+	    background: #41494C;
+	}
+
+}
+
+
 
 </style>
