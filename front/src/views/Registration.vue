@@ -312,4 +312,48 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media(max-width: 910px){
+    .elevated-form{
+        padding: 5px;
+        margin: 20px;
+    }
+}
+
+@media(max-height: 750px){
+    .elevated-form{
+        padding: 5px;
+        margin-top: 50px;
+    }
+
+    .to-scroll{
+        height: 70vh;
+        padding: 20px;
+        margin-bottom: 10px;
+        overflow-y: scroll;
+    }
+}
+
+@media(max-height: 500px){
+
+    .elevated-form{
+        padding-left: 10px;
+    }
+
+    .to-scroll{
+        height: 67vh;
+    }
+}
+
+@media(max-height: 321px){
+
+    .elevated-form{
+        height: 79vh;
+    }
+
+    .to-scroll{
+        height: 55vh;
+    }
+}
+
 </style>
