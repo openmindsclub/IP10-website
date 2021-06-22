@@ -1,6 +1,6 @@
 <template>
 <div>
-    <NavBar/>
+    <NavBar route="welcome"/>
     <div id="welcome" class="hero-acceuil">
         <div class="space"></div>
 

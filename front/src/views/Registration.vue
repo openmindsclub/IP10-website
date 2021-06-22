@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavBar/>
+        <NavBar route="registration"/>
         <b-container fluid class="back">
             <b-row class="elevated-form" align-v="center">
                 <b-col xl="12">

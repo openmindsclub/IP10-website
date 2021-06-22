@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar/>
+    <NavBar route="home"/>
     <Event/>
     <Conferances/>
     <Workshops/>

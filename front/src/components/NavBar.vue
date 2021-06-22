@@ -1,11 +1,14 @@
 <template>
 <header>
 	<nav>
-    	<div class="menu-icon" @click="toogleSlideBar()">
-        	<i class="fa fa-bars fa-2x"></i>
+		<div class="logo-box">
+			<router-link :to="items[0].path"><img class="logo"  src="../assets/logoIP10.png"/></router-link>
+		</div>
+    	<div class="menu-icon">
+        	<i class="fa fa-bars fa-2x" @click="toogleSlideBar()"></i>
         </div>
         <div class="menu">
-        	<ul v-bind:class="{showing: sidebar}">
+        	<ul v-bind:class="{showing: sidebar}" :class="backgroundTheme">
 				<li v-for="item in items" :key="item.title">
 					<router-link v-if= "item.route" :to="item.path">{{ item.title }}</router-link>
 					<div v-else>
@@ -29,6 +32,7 @@
 <script>
 export default {
 	name: "NavBar",
+	props: ['route'],
 	data: () => ({
 		sidebar: false,
 		items: [
@@ -41,14 +45,23 @@ export default {
 				{ title: "Stands", path: "Home#stands"}
 			]},
 			{ title: "Inscriptions", route:true, path: "Registration", composed: false},
-			{ title: "A propos", route:false, composed: true, components:[
-				{ title: "A propos", path: "/#/about"},
-			]},
+			{ title: "Sponsor", route:false, composed: false, path: "Home#sponsor"},
 		]
 	}),
 	methods: {
 		toogleSlideBar(){
 			this.sidebar = !this.sidebar
+		}
+	},
+	computed: {
+		backgroundTheme() {
+			if (this.route == "welcome"){
+				return "welcome-background"
+			} else if (this.route == "home") {
+				return "home-background"
+			} else if (this.route == "registration") {
+				return "registration-background"
+			}
 		}
 	}
 };
@@ -67,17 +80,21 @@ nav {
     width: 100%;
     line-height: 30px;
     z-index: 99999999;
+
+}
+
+.logo{
+	width: 35px;
+	position: fixed;
+	margin-left: 15px;
+	margin-top: 13px;
 }
 
 nav ul {
     line-height: 35px;
     list-style: none;
-    background: rgba(0, 0, 0, 0);
     overflow: hidden;
-    color: #4B535C;
-    padding: 0;
     text-align: right;
-    margin: 0;
 }
 
 nav ul li {
@@ -86,33 +103,21 @@ nav ul li {
 }
 
 nav ul li a {
-    font-family: 'Bungee', cursive;
-    text-decoration: none !important;
-    color: #4B535C;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 nav ul li .dropbtn {
-    font-family: 'Bungee', cursive;
-    text-decoration: none !important;
     color: #4B535C;
 	background: rgba(0, 0, 0, 0);
-    font-size: 18px;
+    font-size: 20px;
 	border: none;
   	outline: none;
-	margin: 0;
 }
 
 nav ul li a:hover{
     color: #E1CF4B;
 }
 
-/* Dropdown Button */
-.dropbtn {
-  border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
   display: inline-block;
 }
@@ -120,19 +125,16 @@ nav ul li a:hover{
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
-  color: #F2F5FE;
   position: fixed;
-  background: #F2F5FE;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px;
+  padding: 20px;
   z-index: 99999;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  text-decoration: none;
   display: block;
   text-align: left;
+  padding-top: 10px;
 }
 
 /* Show the dropdown menu on hover */
@@ -140,11 +142,15 @@ nav ul li a:hover{
 	display: block;
 }
 
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropbtn {
+	color: #E1CF4B;
+}
+
 .menu-icon {
     line-height: 45px;
     width: 100%;
     background: none;
-    text-align: right;
     box-sizing: border-box;
     padding: 10px 30px;
     cursor: pointer;
@@ -153,6 +159,14 @@ nav ul li a:hover{
 }
 
 @media(max-width: 725px) {
+
+	.logo{
+		position: absolute;
+		right: 0px;
+		margin-left: 0px;
+		margin-right: 15px;
+	}
+
     nav ul {
           max-height: 0px;
           background: #000;
@@ -169,8 +183,6 @@ nav ul li a:hover{
           text-align: center;
     }
     nav ul li a {
-        font-family: 'Bungee', cursive;
-        text-decoration: none !important;
         color: #fff;
         font-size: 18px;
     }
@@ -183,4 +195,60 @@ nav ul li a:hover{
     }
 
 }
+
+/* welcome screen */
+.welcome-background{
+	background: #F2F5FE;
+}
+
+.welcome-background a{
+    color: #4B535C;
+}
+
+.welcome-background .dropbtn{
+    color: #4B535C;
+}
+
+.welcome-background .dropdown-content {
+  background: #F2F5FE;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+/* home screen */
+.home-background{
+	background: #41494C;
+}
+
+.home-background a{
+    color: white;
+}
+
+.home-background .dropbtn{
+    color: white;
+}
+
+.home-background .dropdown-content {
+  background: #41494C;
+}
+
+
+/* registration screen */
+.registration-background{
+	background: rgba(0, 0, 0, 0);
+}
+
+.registration-background a{
+    color: white;
+}
+
+.registration-background .dropbtn{
+    color: white;
+}
+
+.registration-background .dropdown-content {
+  background: #41494C;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
 </style>
