@@ -122,26 +122,23 @@ export default {
 @media(max-width: 770px){
 
     .hero {
-        overflow-y: scroll;
-        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-        scrollbar-width: none;
-    }
-
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .hero::-webkit-scrollbar {
-      display: none;
+        height: fit-content;
     }
 
     .space{
-        height: 5%;
+        height: 80px;
+    }
+
+    .leftside{
+        padding-right: 10px;
     }
 
     .leftside h2{
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .leftside p{
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .rightside .clubLogo{
@@ -149,13 +146,9 @@ export default {
     }
 
     .rightside .IPlogo{
-        width:50%;
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-
-    .row-class{
-        width: 100%;
+        width:60%;
+        margin-top: 15px;
+        margin-bottom: 40px;
     }
 }
 
