@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="reg-container">
         <NavBar route="registration"/>
         <b-container fluid class="back">
             <b-row class="elevated-form" align-v="center">
@@ -259,6 +259,11 @@ export default {
 
 
 <style scoped >
+
+.reg-container{
+    width: 100%;
+}
+
 .back{
     background-image: url("../assets/backgrounds/Event_background_2.jpg");
 
@@ -268,7 +273,6 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
 
     display: flex;
     flex-direction: row;
