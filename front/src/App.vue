@@ -50,6 +50,7 @@ export default {
 
 .registration-enter-active {
     transition: all 2s ease-out;
+    position: fixed;
 }
 
 .registration-enter {

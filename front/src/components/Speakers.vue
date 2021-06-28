@@ -19,7 +19,9 @@
             </b-row>
             <b-row align-v="center" align-h="center">
                 <b-col  xl="5" lg="6" md="12">
-                    <Paragraph :title="speakers[curent_index].name" :content="speakers[curent_index].description"/>
+                    <transition name="change-speaker" mode="out-in">
+                        <Paragraph :title="speakers[curent_index].name" :content="speakers[curent_index].description"/>
+                    </transition>
                 </b-col>
             </b-row>
         </b-container>
@@ -124,4 +126,15 @@ h2{
         font-size: 50px;
     }
 }
+
+
+/* animations and transitions*/
+.change-speaker-leave-active, .change-speaker-enter-active {
+    transition: opacity 0.9s ease-in;
+}
+
+.change-speaker-leave-to, .change-speaker-enter-from {
+    opacity: 0;
+}
+
 </style>

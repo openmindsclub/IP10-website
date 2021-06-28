@@ -13,15 +13,23 @@
                 </b-row>
                 <b-row  align-h="center">
                     <b-col  xl="5" lg="6" md="12">
-                        <Paragraph :title="conf2.title" :content="conf2.content" time=true :begin="conf2.timeBegin" :end="conf2.timeEnd"/>
+                        <transition appear name="come-from-right">
+                            <Paragraph :title="conf2.title" :content="conf2.content" time=true :begin="conf2.timeBegin" :end="conf2.timeEnd"/>
+                        </transition>
                         <div class="space2"></div>
-                        <Paragraph :title="conf3.title" :content="conf3.content" time=true :begin="conf3.timeBegin" :end="conf3.timeEnd"/>
+                        <transition appear name="come-from-right">
+                            <Paragraph :title="conf3.title" :content="conf3.content" time=true :begin="conf3.timeBegin" :end="conf3.timeEnd"/>
+                        </transition>
                     </b-col>
                     <b-col  xl="5" lg="6" md="12">
                         <div class="space"></div>
-                        <Paragraph :title="panel1.title" :content="panel1.content" time=true :begin="panel1.timeBegin" :end="panel1.timeEnd"/>
+                        <transition appear name="come-from-left">
+                            <Paragraph :title="panel1.title" :content="panel1.content" time=true :begin="panel1.timeBegin" :end="panel1.timeEnd"/>
+                        </transition>
                         <div class="space"></div>
-                        <Paragraph :title="panel2.title" :content="panel2.content" time=true :begin="panel2.timeBegin" :end="panel2.timeEnd"/>
+                        <transition appear name="come-from-left">
+                            <Paragraph :title="panel2.title" :content="panel2.content" time=true :begin="panel2.timeBegin" :end="panel2.timeEnd"/>
+                        </transition>
                     </b-col>
                 </b-row>
             </b-container>
@@ -137,4 +145,24 @@ h2{
         display: none;
     }
 }
+
+/* animations and transitions*/
+.come-from-right-enter-active {
+    transition: all 0.9s ease-in;
+}
+
+.come-from-right-enter {
+    opacity: 0;
+    transform: translateX(-40%);
+}
+
+.come-from-left-enter-active {
+    transition: all 0.9s ease-in;
+}
+
+.come-from-left-enter {
+    opacity: 0;
+    transform: translateX(60%);
+}
+
 </style>
