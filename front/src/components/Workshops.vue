@@ -61,7 +61,7 @@ export default {
               logo_path: 'python.svg',
               alt_image: "python logo",
               formateur: "Ilies CHIBANE",
-              description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+              description: "Étudiant en ISIL L3 et membre d’OpenMindsCub, il est passionné par l’intelligence artificielle ainsi que le développement de manière général ce qui ont fait le candidat idéal pour animer ce workshop !",
               image: 'python.svg',
           },
           {
@@ -70,7 +70,7 @@ export default {
               logo_path: 'godot.png',
               alt_image: "godot logo",
               formateur: "AIT AMARA Mohamed & SOUIDI Mohammed Amine",
-              description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+              description: "Étudiants en informatique et membres d’OpenMindsCub, passionnés par le développement de nouvelles idées et projets informatiques, ils vous apprendront dans ce workshop à manipuler les bases de godot !",
               image: 'python.svg',
           },
       ],
@@ -83,6 +83,10 @@ export default {
           {
               image: "mohamed_amine_photo.png",
               alt: "SOUIDI Mohammed Amine"
+          },
+          {
+              image: "ait_amara_mohamed.png",
+              alt: "AIT AMARA Mohamed"
           }
       ]
   }),
@@ -109,7 +113,7 @@ export default {
   mounted: function () {
       window.setInterval(() => {
           this.change_image()
-    }, 6000)
+    }, 3000)
 }
 };
 </script>
