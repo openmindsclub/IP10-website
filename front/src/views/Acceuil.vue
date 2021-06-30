@@ -11,7 +11,7 @@
                 <div class="content">
                     <h2>INSTALL PARTY IS HERE</h2>
                     <p>
-                        Notre evenement phare est enfin là, au programme des conferences, panels, workshops et plein d'activités, vous pouvez en apprendre plus juste en bas!
+                        Notre événement phare est enfin là, au programme des conférences, panels, workshops et plein d'activités, vous pouvez en apprendre plus juste en dessous !
                     </p>
                     <router-link to="Registration"><img src="../assets/welcome_screen/participer_button.png" class="participer-button"/></router-link>
 

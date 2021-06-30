@@ -2,8 +2,8 @@
   <div id="about" class="about">
     <h2>About US</h2>
     <img class="clubLogo" src="../assets/omc_logo_white.png"/>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus, sint enim optio et unde esse doloremque labore, repellendus quod itaque similique fuga odio ad, odit aliquid culpa saepe ab.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Nous, <em>OpenMindsClub</em> sommes un club scientifique de l’USTHB fonder en Mars 2009 suite à une organisation réussie de la première install party à l'université par un groupe d'étudiants et enseignants.</p>
+    <p>Nous, OpenMindsClub sommes un club scientifique de l’USTHB, ayant comme philosophie le libre, l’open source et l’esprit de partage, notre objectif est de promouvoir ces derniers en organisant des événements, formations et autre manifestation scientifique. Bien sûr, en tant que promoteur de l’esprit de partage notre objectif est aussi de transmettre notre savoir et connaissance au maximum de gens possible, car comme notre slogan le dit si bien <em>"ce qui ne se partage pas se perd"</em>.</p>
   </div>
 </template>
 

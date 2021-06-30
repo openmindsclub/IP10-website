@@ -7,11 +7,12 @@
                     <h2>Tout sur L'Install Party</h2>
                     <img class="large_white_line"  src="../assets/large_white_line.png"/>
                     <p>
-                        L'Install Party c'est des conférences des workshops mais plus important c'est un evenement sur l'esprit du libre et du partage !
+                        Après deux ans d'absence, suite à des circonstances indépendantes de notre volonté, notre événement phare "L'Install Party" revient le 12 juillets 2021 pour une 10éme édition avec comme thème "New Era" !!
+
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, pariatur, quos corrupti iusto nulla corporis dolore accusamus similique eligendi facilis est quo non inventore quibusdam culpa dolor incidunt ipsa debitis!
+                        L'Install party c’est un événement autours de l’open source, le libre et l’esprit de partage de manière générale destrier aux passionnés du domaine, autant aux experts qu’aux débutants. Durant toute la journée nous proposerons des conférences, workshops mais aussi plein d'autres activités et bien sure comme chaque édition, l’essence de l’événement, à savoir vous offrir l'installation de distributions Linux !
+
                     </p>
                 </b-col>
                 <b-col class="rightside" md="6" sm="12">

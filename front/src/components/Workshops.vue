@@ -57,7 +57,7 @@ export default {
       workshops: [
           {
               title: "Machine Learning avec Python",
-              content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+              content: "L'intelligence Artificielle est aujourd’hui présente dans de plus en plus de domaines, donc naturellement avoir des bases en Machine Learning l’un des sous domaines les plus importants de l’IA est aussi de plus en plus important, et c’est justement ce que vous découvrirez dans ce workshop, à savoir comprendre le fonctionnement du Machine learning en utilisant Python.",
               logo_path: 'python.svg',
               alt_image: "python logo",
               formateur: "Ilies CHIBANE",
@@ -66,7 +66,7 @@ export default {
           },
           {
               title: "Godot",
-              content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+              content: "Vous vous êtes toujours intéressé aux jeux vidéos, et vous rêvez d'apprendre à en créer ? Alors ce workshop est fait pour vous ! Vous allez y apprendre à manipuler Godot un moteur de jeux totalement open source ! Peu importe que vous soyez novice ou non, vous êtes le bienvenu pour nous rejoindre et réveiller le game développeur qui sommeille en vous !",
               logo_path: 'godot.png',
               alt_image: "godot logo",
               formateur: "AIT AMARA Mohamed & SOUIDI Mohammed Amine",
