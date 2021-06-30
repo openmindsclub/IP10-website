@@ -123,7 +123,7 @@ export default {
 .hero{
     background-image: url("../assets/backgrounds/Event_background_3.jpg");
 
-    height: 100vh;
+    height: fit-content;
     width: 100%;
 
     background-position: center;
@@ -175,14 +175,6 @@ h3{
 
 .space{
     height: 15%;
-}
-
-@media(max-width: 1500px){
-
-    .hero {
-        height: fit-content;
-        background-repeat: repeat;
-    }
 }
 
 @media(max-width: 1350px){
