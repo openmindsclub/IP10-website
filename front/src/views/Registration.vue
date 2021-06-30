@@ -39,7 +39,6 @@
                                     v-model="form.birth_date" :min="min" :max="max"
                                     locale="fr"
                                     class="mb-2"
-                                    required
                                 ></b-form-datepicker>
                             </b-form-group>
 
@@ -139,7 +138,7 @@ export default {
           which_university: ''
         },
         activities: [
-          { value: null, text: 'Aucune' },
+          { value: "", text: 'Aucune' },
           { value: 'battle_graphique', text: 'La Battle Graphique' },
           {
             label: 'Workshops',
@@ -194,7 +193,7 @@ export default {
         })
         .finally(() =>{
             this.loading = false
-            console.log(this.info)
+            console.log(this.sucess)
             if ('success' in this.info){
                 this.modalHeading =  "Inscription reussite"
                 this.modalText = "Felicitation vous avez reussit à vous inscrire à l'install party 10"
@@ -202,6 +201,7 @@ export default {
                 this.showModal = true
                 this.sucess = true
             } else if ('error' in this.info) {
+                this.sucess = false
                 this.modalHeading =  "Un probleme est survenue au cours de l'inscription"
                 this.modalText = this.info["error"]
                 this.modalTheme = ""
@@ -209,6 +209,7 @@ export default {
             } else {
 
             }
+            console.log(this.sucess)
         })
       },
       onReset(event) {
@@ -234,7 +235,10 @@ export default {
           this.showModal = false
       },
       Navigate() {
-          this.$router.push({path: '/'})
+          if (this.sucess){
+              this.sucess = false
+              this.$router.push({path: '/'})
+          }
       }
 
     },
@@ -249,7 +253,9 @@ export default {
     },
     mounted() {
     this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
+        console.log(this.sucess)
       if (this.sucess){
+          console.log(this.sucess)
           this.Navigate()
       }
     })

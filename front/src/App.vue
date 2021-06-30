@@ -18,7 +18,11 @@ export default {
   watch: {
       '$route' (to, from) {
           if (to.name == "Registration"){
-              this.transition_name = "registration"
+              if (from.name == "Home"){
+                  this.transition_name = "registration"
+              } else if (from.name == "Acceuil"){
+                  this.transition_name = "registration"
+              }
           } else if (to.name == "Home"){
               if (from.name == "Registration"){
                   this.transition_name = "registration-go"
