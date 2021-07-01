@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <h2>Conferences & panels</h2>
+        <h2>Conférence & panels</h2>
         <div class="desktop">
             <b-container fluid>
                 <b-row align-v="center" align-h="center">
@@ -58,13 +58,13 @@ export default {
       slide: 0,
       sliding: null,
       conf1 : {
-          title: "Conferences: La difference entre le libre et l'open source",
+          title: "Conférence: La difference entre le libre et l'open source",
           content: "Le libre et l’open source, des concepts frères, mais diffèrent. Pourtant, beaucoup de gens ne font pas la différence entre eux. Dans cette conférence, nous allons donc introduire l’open source, le libre et la différence entre les deux.",
           timeBegin: "9h",
           timeEnd: "9h45",
       },
       conf2 : {
-          title: "Conferences: L’open source dans le développement scientifique et les nouvelles technologies",
+          title: "Conférence: L’open source dans le développement scientifique et les nouvelles technologies",
           content: "L’open source a beaucoup contribué au développement scientifique et nouvelles  technologique durant ces dernières années,  vous découvrirez donc durant cette conférence comment l’open source impacte ces deniers et bien sure l’importance de l’open source dans le progrès humain.",
           timeBegin: "10h",
           timeEnd: "10h45",
@@ -76,7 +76,7 @@ export default {
           timeEnd: "11h45",
       },
       conf3 : {
-          title: "Conferences: La difference entre le libre et l'open source",
+          title: "Conférence: Géant de l’industrie qui se tourne vers l’open source",
           content: "Google, Facebook, Microsoft  ou encore Amazon, toutes ces entreprises ont une chose en commun, ils se tournent de plus en plus vers des licences open source pour leurs produits. Découvrez avec nous ce que ces géants de l'industrie on a gagné en se tournant vers l’open source.",
           timeBegin: "14h30",
           timeEnd: "15h15",
