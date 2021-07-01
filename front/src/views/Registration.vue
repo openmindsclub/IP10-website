@@ -209,7 +209,6 @@ export default {
             } else {
 
             }
-            console.log(this.sucess)
         })
       },
       onReset(event) {
@@ -253,9 +252,7 @@ export default {
     },
     mounted() {
     this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
-        console.log(this.sucess)
       if (this.sucess){
-          console.log(this.sucess)
           this.Navigate()
       }
     })
