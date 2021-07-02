@@ -4,7 +4,7 @@
         <b-container fluid class="page">
             <b-row class="row-class" align-v="center" align-h="center">
                 <b-col class="leftside" md="6" sm="12">
-                    <h2>Tout sur L'Install Party</h2>
+                    <h2>Tout sur l'Install Party</h2>
                     <img class="large_white_line"  src="../assets/large_white_line.png"/>
                     <p>
                         Après deux ans d'absence, suite à des circonstances indépendantes de notre volonté, notre événement phare "L'Install Party" revient le 12 juillets 2021 pour une 10éme édition avec comme thème "New Era" !!

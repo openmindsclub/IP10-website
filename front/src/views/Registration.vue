@@ -8,7 +8,7 @@
 
                         <div class="to-scroll">
 
-                            <b-form-group id="input-group-2" label="Nom:" label-for="input-2">
+                            <b-form-group id="input-group-2" label="Nom :" label-for="input-2">
                                 <b-form-input
                                     id="input-2"
                                     v-model="form.last_name"
@@ -16,7 +16,7 @@
                                 ></b-form-input>
                             </b-form-group>
 
-                            <b-form-group id="input-group-3" label="Prenom:" label-for="input-3">
+                            <b-form-group id="input-group-3" label="Prenom :" label-for="input-3">
                                 <b-form-input
                                     id="input-3"
                                     v-model="form.first_name"
@@ -24,17 +24,16 @@
                                 ></b-form-input>
                             </b-form-group>
 
-                            <b-form-group id="input-group-1" label="Email address:" label-for="input-1">
+                            <b-form-group id="input-group-1" label="Addresse email :" label-for="input-1">
                                 <b-form-input
                                     id="input-1"
                                     v-model="form.email"
                                     type="email"
-                                    placeholder="Enter email"
                                     required
                                 ></b-form-input>
                             </b-form-group>
 
-                            <b-form-group id="input-group-5" label="Choisissez les conferences auquels vous voullez participer" label-for="input-5">
+                            <b-form-group id="input-group-5" label="Choisissez les conférences auxquelles vous voulez participer" label-for="input-5">
                                 <b-form-checkbox-group
                                     id="input-5"
                                     v-model="form.conferences"
@@ -44,7 +43,7 @@
                                 ></b-form-checkbox-group>
                             </b-form-group>
 
-                            <b-form-group id="input-group-6" label="À quels workshop aimeriez vous participer?" label-for="input-6">
+                            <b-form-group id="input-group-6" label="À quel workshop aimeriez vous participer?" label-for="input-6">
                                 <b-form-select
                                     id="input-6"
                                     v-model="form.workshops"
@@ -52,7 +51,7 @@
                                 ></b-form-select>
                             </b-form-group>
 
-                            <b-form-group id="input-group-10" label="Voulez vous participer a la battle graphique?" label-for="input-7">
+                            <b-form-group id="input-group-10" label="Voulez-vous participer à la battle graphique ?" label-for="input-7">
                                 <b-form-radio-group
                                     id="input-10"
                                     v-model="form.battle_graphique"
@@ -60,7 +59,7 @@
                                 ></b-form-radio-group>
                             </b-form-group>
 
-                            <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" label-for="input-7">
+                            <b-form-group id="input-group-7" label="Voulez-vous participer à la chasse au trésor ?" label-for="input-7">
                                 <b-form-radio-group
                                     id="input-7"
                                     v-model="form.tresor_hunt"
@@ -69,7 +68,7 @@
                             </b-form-group>
 
 
-                            <b-form-group id="input-group-8" label="Etes vous un etudiants de l'USTHB" label-for="input-8">
+                            <b-form-group id="input-group-8" label="Êtes-vous un étudiant à l'USTHB ?" label-for="input-8">
                                 <b-form-radio-group
                                     id="input-8"
                                     v-model="form.isUSTHB"
@@ -79,7 +78,7 @@
                                 ></b-form-radio-group>
                             </b-form-group>
 
-                            <b-form-group v-if="showWichUniversity" id="input-group-9" label="Dans Quel université etes vous inscrit?" label-for="input-9">
+                            <b-form-group v-if="showWichUniversity" id="input-group-9" label="À Quelle université êtes-vous inscrit ?" label-for="input-9">
                                 <b-form-input
                                     id="input-9"
                                     v-model="form.which_university"

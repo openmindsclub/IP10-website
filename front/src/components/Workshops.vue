@@ -9,7 +9,7 @@
                     <h3>{{workshops[0].title}}</h3>
                     <div class="formation-section">
                         <div class="formation-paragraph">
-                            <Paragraph title="Workshop" :content="workshops[0].content"/>
+                            <Paragraph title="" :content="workshops[0].content"/>
                         </div>
                         <div class="logo">
                             <b-img center :src="require(`../assets/${workshops[0].logo_path}`)" fluid v-bind:alt="workshops[0].alt_image"></b-img>
@@ -29,7 +29,7 @@
                     <h3>{{workshops[1].title}}</h3>
                     <div class="formation-section">
                         <div class="formation-paragraph">
-                            <Paragraph title="Workshop" :content="workshops[1].content"/>
+                            <Paragraph title="" :content="workshops[1].content"/>
                         </div>
                         <div class="logo">
                             <b-img center :src="require(`../assets/${workshops[1].logo_path}`)" fluid v-bind:alt="workshops[1].alt_image"></b-img>
@@ -41,7 +41,7 @@
                 </b-col>
             </b-row>
         </b-container>
-
+        <div class="space-end"></div>
     </div>
 </template>
 
@@ -175,6 +175,10 @@ h3{
 
 .space{
     height: 15%;
+}
+
+.space-end{
+    height: 50px;
 }
 
 @media(max-width: 1350px){
