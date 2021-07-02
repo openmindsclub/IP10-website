@@ -33,7 +33,7 @@ def create_feedback(name, email, message):
     return feedbacks_col.insert_one(post)
 
 
-def create_participant(first_name, last_name, email, birth_day, list_conferences, activities, chasse_au_tresor, is_usthb, which_univ):
+def create_participant(first_name, last_name, email, list_conferences, workshops, chasse_au_tresor, battle_graphique, is_usthb, which_univ):
 
     """
     function that's insert a participant to the database
@@ -64,17 +64,17 @@ def create_participant(first_name, last_name, email, birth_day, list_conferences
         True if the particiapant was added successfully and false elswhere
     """
 
-    _data_verification(email, list_conferences, activities, chasse_au_tresor, is_usthb, which_univ)
+    _data_verification(email, list_conferences, workshops, chasse_au_tresor, is_usthb, which_univ)
 
     list_conferences = [conf.lower() for conf in list_conferences]
 
     post = {
         "first_name": first_name.lower(),
         "last_name": last_name.lower(),
-        "birth_day": birth_day,
         "email": email.lower(),
         "conferences" : list_conferences,
-        "activites": activities.lower(),
+        "workshops": workshops.lower(),
+        "battle_graphique": chasse_au_tresor,
         "chasse_au_tresor": chasse_au_tresor,
         "is_usthb": is_usthb,
     }
@@ -85,10 +85,10 @@ def create_participant(first_name, last_name, email, birth_day, list_conferences
     return participant_col.insert_one(post)
 
 
-def _data_verification(email, list_conferences, activities, chasse_au_tresor, is_usthb, which_univ):
+def _data_verification(email, list_conferences, workshops, chasse_au_tresor, is_usthb, which_univ):
 
     if email_exist(email):
         raise EmailAlreadyExistError(email)
 
-    if activities.lower() not in ["", "python", "godot", "battle_graphique"]:
-        raise InvalidActivityError(activities)
+    if workshops.lower() not in ["", "python", "godot"]:
+        raise InvalidActivityError(workshops)

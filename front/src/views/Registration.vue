@@ -7,15 +7,6 @@
                     <b-form @submit="onSubmit" @reset="onReset">
 
                         <div class="to-scroll">
-                            <b-form-group id="input-group-1" label="Email address:" label-for="input-1">
-                                <b-form-input
-                                    id="input-1"
-                                    v-model="form.email"
-                                    type="email"
-                                    placeholder="Enter email"
-                                    required
-                                ></b-form-input>
-                            </b-form-group>
 
                             <b-form-group id="input-group-2" label="Nom:" label-for="input-2">
                                 <b-form-input
@@ -33,13 +24,14 @@
                                 ></b-form-input>
                             </b-form-group>
 
-                            <b-form-group id="input-group-4" label="Date de Naissance:" label-for="input-4">
-                                <b-form-datepicker
-                                    id="input-4"
-                                    v-model="form.birth_date" :min="min" :max="max"
-                                    locale="fr"
-                                    class="mb-2"
-                                ></b-form-datepicker>
+                            <b-form-group id="input-group-1" label="Email address:" label-for="input-1">
+                                <b-form-input
+                                    id="input-1"
+                                    v-model="form.email"
+                                    type="email"
+                                    placeholder="Enter email"
+                                    required
+                                ></b-form-input>
                             </b-form-group>
 
                             <b-form-group id="input-group-5" label="Choisissez les conferences auquels vous voullez participer" label-for="input-5">
@@ -52,12 +44,20 @@
                                 ></b-form-checkbox-group>
                             </b-form-group>
 
-                            <b-form-group id="input-group-6" label="Dans quels activitées aimeriez vous participer?" label-for="input-6">
+                            <b-form-group id="input-group-6" label="À quels workshop aimeriez vous participer?" label-for="input-6">
                                 <b-form-select
                                     id="input-6"
-                                    v-model="form.activities"
+                                    v-model="form.workshops"
                                     :options="activities"
                                 ></b-form-select>
+                            </b-form-group>
+
+                            <b-form-group id="input-group-10" label="Voulez vous participer a la battle graphique?" label-for="input-7">
+                                <b-form-radio-group
+                                    id="input-10"
+                                    v-model="form.battle_graphique"
+                                    :options="battle_graphique"
+                                ></b-form-radio-group>
                             </b-form-group>
 
                             <b-form-group id="input-group-7" label="Voulez vous participer a la chasse au tresor" label-for="input-7">
@@ -132,14 +132,14 @@ export default {
           last_name: '',
           birth_date: '',
           conferences: [],
-          activities: null,
-          tresor_hunt: null,
+          workshops: '',
+          tresor_hunt: false,
+          battle_graphique: false,
           isUSTHB: null,
           which_university: ''
         },
         activities: [
-          { value: "", text: 'Aucune' },
-          { value: 'battle_graphique', text: 'La Battle Graphique' },
+          { value: "", text: 'Aucun' },
           {
             label: 'Workshops',
             options: [
@@ -160,6 +160,10 @@ export default {
           { text: "non", value: false },
         ],
         tresorHunt: [
+          { text: "oui", value: true },
+          { text: "non", value: false },
+        ],
+        battle_graphique: [
           { text: "oui", value: true },
           { text: "non", value: false },
         ],
@@ -218,10 +222,10 @@ export default {
         this.form.email = ''
         this.form.first_name = ''
         this.form.last_name = ''
-        this.form.birth_date = ''
-        this.form.activities = null
+        this.form.workshops = ''
         this.form.isUSTHB = null
-        this.form.tresor_hunt = null
+        this.form.tresor_hunt = false
+        this.form.battle_graphique = false
         this.form.conferences = []
         this.form.which_university = ''
         // Trick to reset/clear native browser form validation state
