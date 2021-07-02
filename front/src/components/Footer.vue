@@ -3,8 +3,8 @@
         <b-container fluid>
             <b-row align-h="around">
                 <b-col md="6" sm="12">
-                    <h6>Local</h6>
-                    <p>CRI, USTHB, Bab Ezzouar, 16111 Bab Ezzouar, Algeria</p>
+                    <h6>Event localisation</h6>
+                    <p>Cyber Espace, USTHB, Bab Ezzouar, Algeria</p>
                 </b-col>
                 <b-col xs="6" md="3">
                     <h6>Contactez-Nous</h6>

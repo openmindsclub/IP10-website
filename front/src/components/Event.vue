@@ -17,17 +17,6 @@
                 </b-col>
                 <b-col class="rightside" md="6" sm="12">
                     <div class="">
-                        <b-row class="margin-row" align-h="center">
-                            <b-col md="3">
-                                <img class="clubLogo" src="../assets/omc_logo_white.png"/>
-                            </b-col>
-                            <b-col md="3">
-                                <img class="clubLogo" src="../assets/omc_logo_white.png"/>
-                            </b-col>
-                            <b-col md="3">
-                                <img class="clubLogo" src="../assets/omc_logo_white.png"/>
-                            </b-col>
-                        </b-row>
                         <b-row align-h="center" align-v="center">
                             <b-col md="7">
                                 <div>
@@ -35,7 +24,6 @@
                                 </div>
                             </b-col>
                         </b-row>
-
                     </div>
                 </b-col>
             </b-row>
