@@ -9,7 +9,7 @@
 
 <style scoped >
 .about{
-    background-image: url("../assets/backgrounds/club_background.png");
+    background-image: url("../assets/backgrounds/club_background.jpg");
 
     height: 100vh;
     width: 100%;
