@@ -43,7 +43,7 @@
                                 ></b-form-checkbox-group>
                             </b-form-group>
 
-                            <b-form-group id="input-group-6" label="À quel workshop aimeriez vous participer?" label-for="input-6">
+                            <b-form-group id="input-group-6" label="À quel workshop aimeriez vous participer?" label-for="input-6" description="Les workshop se dérouleront simultanément.">
                                 <b-form-select
                                     id="input-6"
                                     v-model="form.workshops"
