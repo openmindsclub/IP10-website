@@ -6,7 +6,6 @@
     <Workshops/>
     <Activities/>
     <Stands/>
-    <Sponsor/>
     <About/>
     <Footer/>
   </div>

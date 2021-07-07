@@ -47,7 +47,6 @@ export default {
 				{ title: "Stands", path: "Home#stands"}
 			]},
 			{ title: "Inscriptions", route:true, path: "Registration", composed: false},
-			{ title: "Sponsor", route:false, composed: false, path: "Home#sponsor"},
 		]
 	}),
 	methods: {
