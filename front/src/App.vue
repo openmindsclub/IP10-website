@@ -48,12 +48,12 @@ export default {
 /* transition to registration route*/
 
 .registration-leave-active {
-    transition: all 2s ease-out;
+    transition: all 1s ease-out;
     position: absolute;
 }
 
 .registration-enter-active {
-    transition: all 2s ease-out;
+    transition: all 1s ease-out;
     position: fixed;
 }
 
@@ -67,12 +67,12 @@ export default {
 
 /* transition from registration route to home or welcome route*/
 .registration-go-leave-active {
-    transition: all 2s ease-out;
+    transition: all 1s ease-out;
     position: absolute;
 }
 
 .registration-go-enter-active {
-    transition: all 2s ease-out;
+    transition: all 1s ease-out;
     position: absolute;
 }
 
