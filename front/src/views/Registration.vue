@@ -148,7 +148,7 @@ export default {
           }
         ],
         conferences: [
-          { text: "Ceremonie d'ouverture & Différence entre libre opensource", value: 'conference1' },
+          { text: "Différence entre libre opensource", value: 'conference1' },
           { text: "L'open source dans le développement scientifique et les nouvelle technologies ", value: 'conference2' },
           { text: "L'Avenir de l'open source dans le développement des nouvelles technologie en algérie et dans le monde", value: 'panel1' },
           { text: "Géant de l'industrie qui se tourne vers l'open source ", value: 'conference3' },
