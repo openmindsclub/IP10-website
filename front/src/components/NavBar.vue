@@ -10,20 +10,27 @@
         <div class="menu">
         	<ul class="ul-principal" v-bind:class="[backgroundTheme, {showing: sidebar}]">
 				<li v-for="item in items" :key="item.title">
-					<router-link v-if= "item.route" :to="item.path">{{ item.title }}</router-link>
+					<p v-b-tooltip.hover title="Registrations are currently closed" class="disabled_link" v-if= "item.title == 'Inscriptions'" >
+						{{ item.title }}
+						 <span class="tooltiptext"></span>
+					</p>
 					<div v-else>
-						<a v-if= "!item.composed" :href="item.path">{{ item.title }}</a>
-						<div v-else class="dropdown">
-							<button class="dropbtn">{{item.title}}
-	      						<i class="fa fa-caret-down"></i>
-	    					</button>
-	  						<ul class="dropdown-content">
-								<li v-for="subItem in item.components" :key="subItem.title">
-									<a :href="subItem.path">{{ subItem.title }}</a>
-								</li>
-	  						</ul>
+						<router-link v-if= "item.route" :to="item.path">{{ item.title }}</router-link>
+						<div v-else>
+							<a v-if= "!item.composed" :href="item.path">{{ item.title }}</a>
+							<div v-else class="dropdown">
+								<button class="dropbtn">{{item.title}}
+		      						<i class="fa fa-caret-down"></i>
+		    					</button>
+		  						<ul class="dropdown-content">
+									<li v-for="subItem in item.components" :key="subItem.title">
+										<a :href="subItem.path">{{ subItem.title }}</a>
+									</li>
+		  						</ul>
+							</div>
 						</div>
 					</div>
+
 				</li>
             </ul>
         </div>
@@ -90,7 +97,6 @@ nav {
     width: 100%;
     line-height: 30px;
     z-index: 99999999;
-
 }
 
 .logo{
@@ -114,6 +120,11 @@ nav {
 
 .ul-principal li a {
     font-size: 20px;
+}
+
+.disabled_link{
+	font-size: 20px;
+	margin: 0;
 }
 
 .dropbtn {
@@ -218,7 +229,7 @@ nav ul li a:hover{
 	background: rgba(0, 0, 0, 0);
 }
 
-.registration-background a{
+.registration-background a, .disabled_link{
     color: white;
 }
 
@@ -261,7 +272,7 @@ nav ul li a:hover{
 
     }
 
-    .ul-principal li a {
+    .ul-principal li a, .disabled_link {
         font-size: 20px;
     }
 
@@ -309,7 +320,6 @@ nav ul li a:hover{
 	}
 
 }
-
 
 
 </style>
