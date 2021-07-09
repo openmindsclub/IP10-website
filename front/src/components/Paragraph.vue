@@ -7,17 +7,21 @@
             <h6 class="time" :class="text_color">{{type}} : {{begin}} - {{end}}</h6>
             <div v-if="images.length > 0" class="images">
                 <div v-for="speaker in images" :key="speaker.index" >
-                    <b-img class="image" rounded="circle" :src="speaker.image" :alt="speaker.name" :title="speaker.name" @click="showModal(speaker.index)"></b-img>
+                    <b-img class="image" rounded="circle" :src="require(`../assets/${speaker.image}`)" :alt="speaker.name" :title="speaker.name" @click="showModal(speaker.index)"></b-img>
                 </div>
             </div>
+            <b-modal v-model="showModalBool" centered :title="modalHeader">
+                <p>{{modalContent}}</p>
+                <div class="modal-contener">
+                    <b-img class="modal-image" rounded="circle" :src="imageToShow" :alt="modalHeader" :title="modalHeader"></b-img>
+                </div>
+                <template #modal-footer="{ok}">
+                    <b-button @click="ok()" size="sm">Continue Browsing</b-button>
+                </template>
+            </b-modal>
         </div>
         <p :class="text_color">{{ content }}</p>
-        <b-modal v-model="showModalBool" centered :title="modalHeader">
-            <p>{{modalContent}}</p>
-            <div class="modal-contener">
-                <b-img class="modal-image" rounded="circle" :src="modalImage" :alt="modalHeader" :title="modalHeader"></b-img>
-            </div>
-        </b-modal>
+
     </div>
 </template>
 
@@ -30,6 +34,7 @@ export default {
       modalContent: "",
       modalImage: "",
       modalHeader: "",
+      modalId: "",
   }),
   methods: {
             showModal(id) {
@@ -37,12 +42,10 @@ export default {
                 console.log(this.images)
                 for (let image of this.images){
                     if (image.index == id){
-                        console.log(image.index)
-                        console.log(id)
+                        this.modalId = id
                         this.modalContent = image.description
                         this.modalImage = image.image
                         this.modalHeader = image.name
-                        console.log(this.modalContent)
                     }
                 }
                 this.showModalBool = true
@@ -71,6 +74,13 @@ export default {
               return 'display-line'
           } else {
               return 'dont-display-line'
+          }
+      },
+      imageToShow(){
+          for (let image of this.images){
+              if (image.index == this.modalId){
+                  return require("../assets/"+image.image)
+              }
           }
       }
   }

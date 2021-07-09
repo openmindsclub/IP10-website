@@ -8,7 +8,7 @@
                            :controls-width="30" :controls-height="60" :autoplay="true" :autoplay-timeout="6000" :perspective="0" :space="400" :display="3" @after-slide-change="onAfterSlideChange">
                         <slide v-for="sepeaker in speakers" :key="sepeaker.index" :index="sepeaker.index">
                             <figure>
-                                <img :src="sepeaker.image">
+                                <img :src="require(`../assets/${sepeaker.image}`)">
                                 <figcaption>
                                     {{sepeaker.smallDescription}}
                                 </figcaption>
@@ -17,7 +17,7 @@
                     </carousel-3d>
                 </b-col>
             </b-row>
-            <b-row align-v="center" align-h="center">
+            <b-row class="speaker-content" align-v="center" align-h="center">
                 <b-col  xl="5" lg="6" md="12">
                     <transition name="change-speaker" mode="out-in">
                         <Paragraph :title="speakers[curent_index].name" :content="speakers[curent_index].description"/>
@@ -43,45 +43,31 @@ export default {
         speakers: [
             {
                 index: 0,
-                name: "Aymen Khouas",
-                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                image: "https://picsum.photos/200/300"
+                name: "Younes Grar",
+                smallDescription: "Consultant IT, expert en ICT.",
+                description: "Consultant IT, expert en ICT et développement de nouveaux business, animateur de la conférence :  L’open source dans le développement scientifique et les nouvelles technologies, et membre du panel, “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
+                image: "speakers/Younes_grar.jpg"
             },
             {
                 index: 1,
-                name: "Dovahkiin",
-                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                image: "https://picsum.photos/200/300"
+                name: "Rezki DEMIL",
+                smallDescription: "Expert en cybersécurité",
+                description: "Expert en cybersécurité et vivement intéressé par les nouvelles technologies et plateformes open source et sa conférence sera sur les géants de l’industrie qui se tourne vers l’open source, puis sera membre du panel ou nous discuterons comment l’open source peut améliorer la croissance des entreprises en Algérie.",
+                image: "speakers/Rezki_DEMIL.jpg"
             },
             {
                 index: 2,
-                name: "Link",
-                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                image: "https://picsum.photos/200/300"
+                name: "Tarik Zakaria Benmerara",
+                smallDescription: "Entrepreneur, chercheur et contributeur open source",
+                description: "Entrepreneur, chercheur et professeur d'université,  participant à plusieurs projets open source, il est aussi un des fondateurs du club openmindsclub. Membre du panel, “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
+                image: "speakers/Tarik_Zakaria_Benmera.jpg"
             },
             {
                 index: 3,
-                name: "Luck skywalker",
-                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                image: "https://picsum.photos/200/300"
-            },
-            {
-                index: 4,
-                name: "Jules cesar",
-                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                image: "https://picsum.photos/200/300"
-            },
-            {
-                index: 5,
-                name: "another random character",
-                smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                image: "https://picsum.photos/200/300"
+                name: "Idir Nasser BELKEBIR",
+                smallDescription: "Business Owner, business developer, Consultant",
+                description: "Acteur actif, au service du développement des compétences et de la performance des entreprises. Membre du panel  “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
+                image: "speakers/Idir_Nasser_Belkbir1.jpg"
             }
         ]
     }),
@@ -118,6 +104,10 @@ h2{
   font-size: 12px;
   min-width: 100%;
   box-sizing: border-box;
+}
+
+.speaker-content{
+    height: 300px;
 }
 
 @media(max-width: 800px){

@@ -74,10 +74,10 @@ export default {
           speakers: [
               {
                   index: 0,
-                  name: "Aymen Khouas",
-                  smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                  image: "https://picsum.photos/200/300"
+                  name: "Younes Grar",
+                  smallDescription: "Consultant IT, expert en ICT.",
+                  description: "Consultant IT, expert en ICT et développement de nouveaux business, animateur de la conférence :  L’open source dans le développement scientifique et les nouvelles technologies, et membre du panel, “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
+                  image: "speakers/Younes_grar.jpg"
               },
           ]
       },
@@ -90,17 +90,17 @@ export default {
           speakers: [
               {
                   index: 0,
-                  name: "Aymen Khouas",
-                  smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                  image: "https://picsum.photos/200/300"
+                  name: "Younes Grar",
+                  smallDescription: "Consultant IT, expert en ICT.",
+                  description: "Consultant IT, expert en ICT et développement de nouveaux business, animateur de la conférence :  L’open source dans le développement scientifique et les nouvelles technologies, et membre du panel, “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
+                  image: "speakers/Younes_grar.jpg"
               },
               {
                   index: 1,
-                  name: "Dovahkiin",
-                  smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                  image: "https://picsum.photos/200/300"
+                  name: "Idir Nasser BELKEBIR",
+                  smallDescription: "Business Owner, business developer, Consultant",
+                  description: "Acteur actif, au service du développement des compétences et de la performance des entreprises. Membre du panel  “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
+                  image: "speakers/Idir_Nasser_Belkbir1.jpg"
               }
           ]
       },
@@ -113,10 +113,10 @@ export default {
           speakers: [
               {
                   index: 2,
-                  name: "Aymen Khouas",
-                  smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                  image: "https://picsum.photos/200/300"
+                  name: "Rezki DEMIL",
+                  smallDescription: "Expert en cybersécurité",
+                  description: "Expert en cybersécurité et vivement intéressé par les nouvelles technologies et plateformes open source,  il sera animateur de la conférence : géants de l’industrie qui se tourne vers l’open source, et membre du panel ou nous discuterons sur comment l’open source peut améliorer la croissance des entreprises en Algérie.",
+                  image: "speakers/Rezki_DEMIL.jpg"
               },
           ]
       },
@@ -129,17 +129,17 @@ export default {
           speakers: [
               {
                   index: 2,
-                  name: "Aymen Khouas",
-                  smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                  image: "https://picsum.photos/200/300"
+                  name: "Rezki DEMIL",
+                  smallDescription: "Expert en cybersécurité",
+                  description: "Expert en cybersécurité et vivement intéressé par les nouvelles technologies et plateformes open source,  il sera animateur de la conférence : géants de l’industrie qui se tourne vers l’open source, et membre du panel ou nous discuterons sur comment l’open source peut améliorer la croissance des entreprises en Algérie.",
+                  image: "speakers/Rezki_DEMIL.jpg"
               },
               {
                   index: 3,
-                  name: "Dovahkiin",
-                  smallDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                  image: "https://picsum.photos/200/300"
+                  name: "Tarik Zakaria Benmerara",
+                  smallDescription: "Entrepreneur, chercheur et contributeur open source",
+                  description: "Entrepreneur, chercheur et professeur d'université,  participant à plusieurs projets open source, il est aussi un des fondateurs du club openmindsclub. Membre du panel, “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
+                  image: "speakers/Tarik_Zakaria_Benmera.jpg"
               }
           ]
       },
