@@ -40,6 +40,15 @@ class participant(Resource):
             return jsonify({"error": "Can't add participant"})
 api.add_resource(participant,'/register')
 
+class graphic_battle(Resource):
+    def post(self):
+        insert = models.create_graphic_battle(request.json["email"], request.json["link"])
+        if (insert):
+            return jsonify({"Success":"Feedback added successfully"})
+        else:
+            return jsonify({"Error": "Can't save your design"})
+api.add_resource(graphic_battle, '/graphic_battle')
+
 
 if __name__ == "__main__":
     app.run()

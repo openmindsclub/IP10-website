@@ -9,6 +9,7 @@ from my_app.exceptions import *
 db_name = "omcIP" # database name
 app.config["MONGO_URI"] = "mongodb://localhost:27017/" + db_name
 mongo = PyMongo(app)
+graphic_battle_col = mongo.db["graphic_battle"]
 feedbacks_col = mongo.db['feedbacks'] # participant collection
 participant_col = mongo.db['participant'] # verifing email
 
@@ -31,6 +32,20 @@ def create_feedback(name, email, message):
         "message": message
     }
     return feedbacks_col.insert_one(post)
+
+def create_graphic_battle(email, link):
+    """
+    insert a feedback into the database
+
+    Parameters:
+         email(str), link(str)
+    """
+
+    post = {
+        "email": email,
+        "link": link,
+    }
+    return graphic_battle_col.insert_one(post)
 
 
 def create_participant(first_name, last_name, email, list_conferences, workshops, chasse_au_tresor, battle_graphique, is_usthb, which_univ):
