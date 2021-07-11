@@ -13,6 +13,10 @@ export default {
     return $axios.post(`register`, data)
       .then(response => response.data)
   },
+  graphicBattle(data) {
+    return $axios.post(`graphic_battle`, data)
+      .then(response => response.data)
+  },
 
   feedback (data) {
     return $axios.post(`feedback`, data)

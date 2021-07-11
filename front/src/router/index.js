@@ -19,6 +19,11 @@ const routes = [
     name: 'Registration',
     component: () => import('../views/Registration.vue')
   },
+	{
+		path: '/graphicbattle',
+	    	name: 'gb',
+	    	component: () => import('../views/GraphicBattle.vue')
+	}
 ]
 
 const router = new VueRouter({
