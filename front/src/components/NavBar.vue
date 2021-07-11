@@ -186,7 +186,7 @@ nav ul li a:hover{
 	background: #F2F5FE;
 }
 
-.welcome-background a{
+.welcome-background a, .welcome-background .disabled_link{
     color: #4B535C;
 }
 
@@ -208,7 +208,7 @@ nav ul li a:hover{
 	background: #41494C;
 }
 
-.home-background a{
+.home-background a, .home-background .disabled_link{
     color: white;
 }
 
@@ -229,7 +229,7 @@ nav ul li a:hover{
 	background: rgba(0, 0, 0, 0);
 }
 
-.registration-background a, .disabled_link{
+.registration-background a, .registration-background .disabled_link{
     color: white;
 }
 
