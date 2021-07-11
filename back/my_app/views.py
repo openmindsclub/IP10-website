@@ -44,9 +44,9 @@ class graphic_battle(Resource):
     def post(self):
         insert = models.create_graphic_battle(request.json["email"], request.json["link"])
         if (insert):
-            return jsonify({"Success":"Feedback added successfully"})
+            return jsonify({"success":"Feedback added successfully"})
         else:
-            return jsonify({"Error": "Can't save your design"})
+            return jsonify({"error": "Can't save your design"})
 api.add_resource(graphic_battle, '/graphic_battle')
 
 

@@ -17,20 +17,20 @@ export default {
   },
   watch: {
       '$route' (to, from) {
-          if (to.name == "Registration"){
+          if (to.name == "Registration" || to.name == "gb"){
               if (from.name == "Home"){
                   this.transition_name = "registration"
               } else if (from.name == "Acceuil"){
                   this.transition_name = "registration"
               }
           } else if (to.name == "Home"){
-              if (from.name == "Registration"){
+              if (from.name == "Registration" || to.name == "gb"){
                   this.transition_name = "registration-go"
               } else if (from.name == "Acceuil"){
                   this.transition_name = "welcome-home"
               }
           } else if (to.name == "Acceuil"){
-              if (from.name == "Registration"){
+              if (from.name == "Registration" || to.name == "gb"){
                   this.transition_name = "registration-go"
               } else if (from.name == "Home"){
                   this.transition_name = "home-welcome"

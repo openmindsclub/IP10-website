@@ -54,6 +54,7 @@ export default {
 				{ title: "Stands", path: "Home#stands"}
 			]},
 			{ title: "Inscriptions", route:true, path: "Registration", composed: false},
+			{ title: "Battle Graphique", route:true, path: "/graphicbattle", composed: false},
 		]
 	}),
 	methods: {

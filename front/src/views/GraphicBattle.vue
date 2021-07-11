@@ -1,6 +1,6 @@
 <template>
     <div class="reg-container">
-        <NavBar route="gb"/>
+        <NavBar route="registration"/>
         <b-container fluid class="back">
             <b-row class="elevated-form" align-v="center">
                 <b-col xl="12">
@@ -51,13 +51,11 @@ import $backend from '../backend'
 import NavBar from '../components/NavBar'
 
 export default {
-  name: "Registration",
+  name: "GraphicBattle",
   component: {
       NavBar,
   },
   data() {
-      const minDate = new Date(1970, 1, 1);
-      const maxDate = new Date(2004, 11, 31);
       return {
         form: {
           email: "",
@@ -70,8 +68,6 @@ export default {
         modalTheme: "",
 	sucess:false,
 	loading:false,
-    	min: minDate,
-        max: maxDate,
         show: true,
         errored: false,
         error : "",
@@ -92,16 +88,15 @@ export default {
         })
         .finally(() =>{
             this.loading = false
-            console.log(this.sucess)
             if ('success' in this.info){
-                this.modalHeading =  "Inscription reussite"
-                this.modalText = "Felicitation vous avez reussit à vous inscrire à l'install party 10"
+                this.modalHeading =  "Votre travail a bien etais soumit"
+                this.modalText = "felicitation, votre travail a bien etais soumit, en attendant n'hesiter pas à participer à nos autres activités"
                 this.modalTheme = ""
                 this.showModal = true
                 this.sucess = true
             } else if ('error' in this.info) {
                 this.sucess = false
-                this.modalHeading =  "Un probleme est survenue au cours de l'inscription"
+                this.modalHeading =  "Un probleme est survenue au cours de la soumissions veuillez reasseyer"
                 this.modalText = this.info["error"]
                 this.modalTheme = ""
                 this.showModal = true
@@ -132,7 +127,7 @@ export default {
       toggleModal() {
           this.showModal = false
       },
- Navigate() {
+      Navigate() {
           if (this.sucess){
               this.sucess = false
               this.$router.push({path: '/'})
@@ -259,4 +254,3 @@ export default {
 }
 
 </style>
-
