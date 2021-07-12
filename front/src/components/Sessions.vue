@@ -63,7 +63,14 @@ export default {
           timeBegin: "9h",
           timeEnd: "9h45",
           type: "Conférence",
-          speakers: []
+          speakers: [
+              {
+                  index: 5,
+                  name: "paul serdigne",
+                  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                  image: "speakers/blue.jpg"
+              }
+          ]
       },
       conf2 : {
           title: "L’open source dans le développement scientifique et les nouvelles technologies",
@@ -143,6 +150,12 @@ export default {
               }
           ]
       },
+      surprise_speaker : {
+          index: 5,
+          name: "paul serdigne",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          image: "speakers/blue.jpg"
+      }
   }),
   methods: {
       onSlideStart(slide) {

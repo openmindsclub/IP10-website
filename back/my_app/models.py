@@ -89,7 +89,7 @@ def create_participant(first_name, last_name, email, list_conferences, workshops
         "email": email.lower(),
         "conferences" : list_conferences,
         "workshops": workshops.lower(),
-        "battle_graphique": chasse_au_tresor,
+        "battle_graphique": battle_graphique,
         "chasse_au_tresor": chasse_au_tresor,
         "is_usthb": is_usthb,
     }
