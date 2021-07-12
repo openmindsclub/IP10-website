@@ -64,12 +64,7 @@ export default {
           timeEnd: "9h45",
           type: "Conférence",
           speakers: [
-              {
-                  index: 5,
-                  name: "paul serdigne",
-                  description: "You Must Mate The king!",
-                  image: "speakers/blue.jpg"
-              }
+              
           ]
       },
       conf2 : {
@@ -86,6 +81,13 @@ export default {
                   description: "Consultant IT, expert en ICT et développement de nouveaux business, animateur de la conférence :  L’open source dans le développement scientifique et les nouvelles technologies, et membre du panel, “Avenir de l'open source dans le développement des nouvelles technologies en Algérie et dans le monde”.",
                   image: "speakers/Younes_grar.jpg"
               },
+              {
+                  index: 5,
+                  name: "paul serdigne",
+                  smallDescription: "Consultant IT, expert en ICT.",
+                  description: "You must mate the king!",
+                  image: "speakers/blue.jpg"
+              }
           ]
       },
       panel1 : {
